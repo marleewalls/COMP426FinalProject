@@ -1,0 +1,31 @@
+{
+  "0": {
+    "id": 0,
+    "ingredients": [
+      "peanut butter",
+      "jelly",
+      "bread"
+    ],
+    "allergens": [
+      "peanuts",
+      "gluten"
+    ],
+    "vegetarian": true,
+    "vegan": true
+  },
+  "1": {
+    "id": 1,
+    "ingredients": [
+      "tomato sauce",
+      "cheese",
+      "pepperoni",
+      "pizza crust"
+    ],
+    "allergens": [
+      "dairy",
+      "gluten"
+    ],
+    "vegetarian": false,
+    "vegan": false
+  }
+}
