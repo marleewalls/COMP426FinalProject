@@ -1,6 +1,7 @@
 {
   "0": {
     "id": 0,
+    "name": "Peanut Butter and Jelly Sandwich", 
     "ingredients": [
       "peanut butter",
       "jelly",
@@ -15,6 +16,7 @@
   },
   "1": {
     "id": 1,
+    "name": "Pepperoni Pizza",
     "ingredients": [
       "tomato sauce",
       "cheese",

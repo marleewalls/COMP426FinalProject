@@ -19,10 +19,10 @@ app.get('/recipe/:id', (req, res) => {
 })
 
 app.post('/recipe', (req, res) => {
-    let {ingredients, allergens, vegetarian, vegan} = req.body;
+    let { name, ingredients, allergens, vegetarian, vegan } = req.body;
     // add code to check validity
 
-    let r = Recipe.create(ingredients, allergens, vegetarian, vegan);
+    let r = Recipe.create(name, ingredients, allergens, vegetarian, vegan);
     if (r == null) {
         res.status(400).send("Bad Request");
         return;
@@ -37,7 +37,8 @@ app.put('/recipe/:id', (req, res) => {
         return;
     }
 
-    let {ingredients, allergens, vegetarian, vegan} = req.body;
+    let { name, ingredients, allergens, vegetarian, vegan } = req.body;
+    r.name = name;
     r.ingredients = ingredients;
     r.allergens = allergens;
     r.vegetarian = vegetarian;
