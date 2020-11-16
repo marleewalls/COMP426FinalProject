@@ -1,4 +1,5 @@
 const recipeData = require('data-store')({ path: process.cwd() + '/data/recipe.json' });
+
 class Recipe {
     constructor(id, name, ingredients, allergens, vegetarian, vegan) {
         this.id = id;
@@ -50,3 +51,4 @@ Recipe.create = (name, ingredients, allergens, vegetarian, vegan) => {
 // recipeData.set(r1.id.toString(), r1);
 
 module.exports = Recipe;
+// exports.recipe = Recipe;

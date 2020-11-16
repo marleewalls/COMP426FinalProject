@@ -17,9 +17,12 @@
   },
   "homepage": "https://github.com/marleewalls/COMP426FinalProject#readme",
   "dependencies": {
+    "ajax": "0.0.4",
     "body-parser": "^1.19.0",
+    "bulma": "^0.9.1",
     "data-store": "^4.0.3",
     "express": "^4.17.1",
+    "module": "^1.2.5",
     "require": "^2.4.20"
   },
   "devDependencies": {}
