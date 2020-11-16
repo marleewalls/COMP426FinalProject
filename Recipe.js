@@ -18,12 +18,12 @@ class Recipe {
     }
 }
 
-Recipe.getAllIDs = () => {
+Recipe.getAllIDs = async () => {
     // Return an array of all recipe IDs
     return Object.keys(recipeData.data).map((id => { return parseInt(id); }));
 }
 
-Recipe.findByID = (id) => {
+Recipe.findByID = async (id) => {
     let rdata = recipeData.get(id);
     if (rdata != null) {
         return new Recipe(rdata.id, rdata.name, rdata.ingredients, rdata.allergens, rdata.vegetarian, rdata.vegan);
