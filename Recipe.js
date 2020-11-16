@@ -1,4 +1,5 @@
 const recipeData = require('data-store')({ path: process.cwd() + '/data/recipe.json' });
+
 class Recipe {
     constructor(id, name, ingredients, allergens, vegetarian, vegan) {
         this.id = id;
@@ -18,7 +19,7 @@ class Recipe {
     }
 }
 
-Recipe.getAllIDs = () => {
+Recipe.getAllIDs = async () => {
     // Return an array of all recipe IDs
     return Object.keys(recipeData.data).map((id => { return parseInt(id); }));
 }
@@ -50,3 +51,4 @@ Recipe.create = (name, ingredients, allergens, vegetarian, vegan) => {
 // recipeData.set(r1.id.toString(), r1);
 
 module.exports = Recipe;
+// exports.recipe = Recipe;
