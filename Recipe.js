@@ -32,12 +32,12 @@ Recipe.findByID = async (id) => {
     return null;
 }
 
-Recipe.nextID = Recipe.getAllIDs().reduce((max, nextID) => {
-    if (max < nextID) {
-        return nextID;
-    }
-    return max;
-}, -1) + 1;
+// Recipe.nextID = Recipe.getAllIDs().reduce((max, nextID) => {
+//     if (max < nextID) {
+//         return nextID;
+//     }
+//     return max;
+// }, -1) + 1;
 
 Recipe.create = (name, ingredients, allergens, vegetarian, vegan) => {
     let id = Recipe.nextID;
