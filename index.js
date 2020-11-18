@@ -11,7 +11,7 @@ app.use(expressSession({
     name: "kmpSessionCookie",
     secret: "express session secret",
     resave: false,
-    saveUninitialized = false
+    saveUninitialized: false
 }));
 
 const login_data = require('data-store')({ path: process.cwd() + '/data/users.json' });
