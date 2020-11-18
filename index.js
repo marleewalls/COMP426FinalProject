@@ -3,7 +3,7 @@ const app = express();
 const Recipe = require('./Recipe.js');
 const Secret = require('./Secret.js');
 const bodyParser = require('body-parser');
-app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
 
 const expressSession = require('express-session');
 
@@ -17,8 +17,14 @@ app.use(expressSession({
 const login_data = require('data-store')({ path: process.cwd() + '/data/users.json' });
 
 app.post('/login', (req, res) => {
-    let user = req.body.user;
-    let password = req.body.password;
+    let obj = {}
+    for (let first in req.body) {
+        obj = first;
+        break;
+    }
+    obj = JSON.parse(obj);
+    let user = obj["user"];
+    let password = obj["password"];
 
     let user_data = login_data.get(user);
     if (user_data == null) {
