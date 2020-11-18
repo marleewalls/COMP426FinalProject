@@ -23,6 +23,7 @@
     "data-store": "^4.0.3",
     "express": "^4.17.1",
     "express-session": "^1.17.1",
+    "jquery": "^3.5.1",
     "module": "^1.2.5",
     "require": "^2.4.20"
   },

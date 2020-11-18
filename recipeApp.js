@@ -11,7 +11,6 @@ const fetchRecipes = function () {
         });
 }
 
-
 const loadRecipes = async (recipes) => {
     for (let item in recipes) {
         // console.log(recipes[item]);
