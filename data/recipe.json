@@ -12,8 +12,8 @@
       "peanuts",
       "gluten"
     ],
-    "vegetarian": true,
-    "vegan": true
+    "vegetarian": "yes",
+    "vegan": "yes"
   },
   "1": {
     "id": 1,
@@ -29,8 +29,8 @@
       "dairy",
       "gluten"
     ],
-    "vegetarian": false,
-    "vegan": false
+    "vegetarian": "no",
+    "vegan": "no"
   },
   "2": {
     "id": 2,
@@ -42,8 +42,8 @@
     "allergens": [
       "none"
     ],
-    "vegetarian": true,
-    "vegan": false
+    "vegetarian": "no",
+    "vegan": "no"
   },
   "3": {
     "id": 3,
@@ -55,7 +55,23 @@
     "allergens": [
       "none"
     ],
-    "vegetarian": true,
-    "vegan": false
+    "vegetarian": "no",
+    "vegan": "no"
+  },
+  "4": {
+    "id": 4,
+    "owner": "",
+    "name": "cinnamon rolls",
+    "ingredients": [
+      "cinnamon",
+      " rolls",
+      " icing"
+    ],
+    "allergens": [
+      "cinnamon",
+      " gluten"
+    ],
+    "vegetarian": "yes",
+    "vegan": "no"
   }
 }
