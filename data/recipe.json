@@ -35,14 +35,25 @@
   "2": {
     "id": 2,
     "owner": "",
-    "name": "Grilled Cheese",
+    "name": "more canned hotdogs",
     "ingredients": [
-      "bread",
-      "cheese",
-      "butter"
+      "hotdogs"
     ],
     "allergens": [
-      "dairy"
+      "none"
+    ],
+    "vegetarian": true,
+    "vegan": false
+  },
+  "3": {
+    "id": 3,
+    "owner": "",
+    "name": "canned hotdogs",
+    "ingredients": [
+      "hotdogs"
+    ],
+    "allergens": [
+      "none"
     ],
     "vegetarian": true,
     "vegan": false
