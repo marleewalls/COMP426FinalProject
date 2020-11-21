@@ -20,7 +20,7 @@ class Recipe {
     }
 }
 
-Recipe.getAllIDs = async () => {
+Recipe.getAllIDs = () => {
     // Return an array of all recipe IDs
     return Object.keys(recipeData.data).map((id => { return parseInt(id); }));
 }
@@ -34,17 +34,17 @@ Recipe.findByID = async (id) => {
 }
 
 
-// Recipe.nextID = Recipe.getAllIDs().reduce((max, nextID) => {
-//     if (max < nextID) {
-//         return nextID;
-//     }
-//     return max;
-// }, -1) + 1;
+Recipe.nextID = Recipe.getAllIDs().reduce((max, nextID) => {
+    if (max < nextID) {
+        return nextID;
+    }
+    return max;
+}, -1) + 1;
 
 Recipe.create = (owner, name, ingredients, allergens, vegetarian, vegan) => {
-    // let id = Recipe.nextID;
-    // Recipe.nextID += 1;
-    let r = new Recipe(2, owner, name, ingredients, allergens, vegetarian, vegan);
+    let id = Recipe.nextID;
+    Recipe.nextID += 1;
+    let r = new Recipe(id, owner, name, ingredients, allergens, vegetarian, vegan);
     recipeData.set(r.id.toString(), r);
     return r;
 }
