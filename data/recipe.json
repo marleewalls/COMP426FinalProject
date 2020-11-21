@@ -1,7 +1,8 @@
 {
   "0": {
     "id": 0,
-    "name": "Peanut Butter and Jelly Sandwich", 
+    "owner": "marlee",
+    "name": "Peanut Butter and Jelly Sandwich",
     "ingredients": [
       "peanut butter",
       "jelly",
@@ -16,6 +17,7 @@
   },
   "1": {
     "id": 1,
+    "owner": "margreen",
     "name": "Pepperoni Pizza",
     "ingredients": [
       "tomato sauce",
@@ -28,6 +30,21 @@
       "gluten"
     ],
     "vegetarian": false,
+    "vegan": false
+  },
+  "2": {
+    "id": 2,
+    "owner": "",
+    "name": "Grilled Cheese",
+    "ingredients": [
+      "bread",
+      "cheese",
+      "butter"
+    ],
+    "allergens": [
+      "dairy"
+    ],
+    "vegetarian": true,
     "vegan": false
   }
 }

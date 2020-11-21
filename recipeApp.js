@@ -1,3 +1,4 @@
+// const RecipeView = require('./recipeBookView.js');
 $(document).ready(() => {
     fetchRecipes();
 
@@ -28,3 +29,4 @@ const loadRecipes = async (recipes) => {
     // })
 
 }
+

@@ -1,13 +1,31 @@
 {
-    "kmp": {
-        "password": "comp426", 
-        "name": "Ketan Mayer-Patel", 
-        "type": "admin"
-    },
-
-    "marlee": {
-        "password": "123", 
-        "name": "Marlee Walls", 
-        "type": "admin"
-    }
+  "kmp": {
+    "password": "comp426",
+    "name": "Ketan Mayer-Patel",
+    "type": "admin"
+  },
+  "marlee": {
+    "password": "123",
+    "name": "Marlee Walls",
+    "type": "admin"
+  },
+  "margreen": {
+    "username": "margreen",
+    "password": "hello"
+  },
+  "anotheruser": {
+    "username": "anotheruser",
+    "password": "anotherpassword"
+  },
+  "nmanalis": {
+    "username": "nmanalis",
+    "password": "babyblue!"
+  },
+  "marygreen9499": {
+    "first_name": "Mary",
+    "last_name": "Green",
+    "email": "margreen@live.unc.edu",
+    "username": "marygreen9499",
+    "password": "password2"
+  }
 }

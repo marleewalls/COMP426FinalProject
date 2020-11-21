@@ -11,22 +11,35 @@
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="recipeBookView.js"></script>
     <script type="module" src="recipeApp.js"></script>
+    <script src="Home.js"></script>
     
 </head>
 <body>
-    <div>
-        <nav>
-            <a href="./index.html">Home</a>
-            <a href="./profile.html">My Profile</a>
-            <a href="./sign_up.html">Sign Up</a>
-            <a href="./sign_in.html">Sign In</a>
+        <nav class="navbar">
+            <span class="tag is-link is-light"><a href="./index.html">Home</a> </span>
+           <!-- <a href="./profile.html">My Profile</a> -->
+           <div class="navbar-menu"><div class="navbar-end"><span class="tag is-link is-light"><a href="./sign_up.html">Sign Up</a></span>
+           <span class="tag is-link is-light"><a href="./sign_in.html">Sign In</a> </span></div></div>
+
         </nav>
-    </div>
-    <div> 
-        <h1>Rameses' Recipes</h1>
-        <h3>What's in <em>Lenoir</em> pantry?</h3>
-    </div>
-    <div id="recipeList"></div>
+
+        <h1 class="title is-1">Rameses' Recipes</h1><br>
+            <!-- <form id="newRecipeForm">
+                    <label for="recipeName">Recipe Name:</label>
+                    <input type="text" id="recipeName" name="recipeName"> <br><br>
+                    <label for="ingredients">Ingredients:</label>
+                    <input type="text" id="ingredients" name="ingredients"> <br><br>
+                    <label for="allergens">Allegerns:</label>
+                    <input type="text" id="allergens" name="allergens"> <br><br>
+                    <label for="vegetarian">Vegetarian:</label>
+                    <input type="text" id="vegetarian" name="vegetarian"> <br><br>
+                    <label for="vegan">Vegan:</label>
+                    <input type="text" id="vegan" name="vegan"> <br><br>
+                    <button type="submit" id="addNewRecipe">Post New Recipe</button>
+                </form> -->
+   <input type="text" id="mySearch" placeholder="Search for recipes.."><br><br>
+    <button class="button is-primary is-light" type="button" id="createNewRecipe" >Create New Recipe</button><br><br>
+    <div id="recipeList"></div><br>
 
     
 </body>
