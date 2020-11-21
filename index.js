@@ -10,10 +10,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 const expressSession = require('express-session');
 
-app.get('/currentUser', (req, res) => {
+app.get('/currentUser/:id', (req, res) => {
+    console.log("here");
     currUser = req.session.user;
     console.log(currUser);
-    console.log("above");
     return res.json(currUser);
 });
 
@@ -158,13 +158,14 @@ app.put('/recipe/:id', (req, res) => {
 })
 
 app.delete('/recipe/:id', (req, res) => {
-    let r = Recipe.findByID(req.params.id);
-    if (r == null) {
-        res.status(404).send("Recipe not found");
-        return;
-    }
-    r.delete();
-    res.json(true);
+    // let r = Recipe.findByID(req.params.id);
+    // if (r == null) {
+    //     res.status(404).send("Recipe not found");
+    //     return;
+    // }
+    // r.delete();
+    // res.json(true);
+    Recipe.delete();
 })
 
 // app.get('/secret', (req, res) => {

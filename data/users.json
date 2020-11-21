@@ -27,5 +27,12 @@
     "email": "margreen@live.unc.edu",
     "username": "marygreen9499",
     "password": "password2"
+  },
+  "goose": {
+    "first_name": "silly",
+    "last_name": "goose",
+    "email": "goose@gmail.com",
+    "username": "goose",
+    "password": "honk"
   }
 }
