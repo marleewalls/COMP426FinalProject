@@ -12,8 +12,8 @@
       "peanuts",
       "gluten"
     ],
-    "vegetarian": true,
-    "vegan": true
+    "vegetarian": "yes",
+    "vegan": "yes"
   },
   "1": {
     "id": 1,
@@ -29,22 +29,49 @@
       "dairy",
       "gluten"
     ],
-    "vegetarian": false,
-    "vegan": false
+    "vegetarian": "no",
+    "vegan": "no"
   },
   "2": {
     "id": 2,
     "owner": "",
-    "name": "Grilled Cheese",
+    "name": "more canned hotdogs",
     "ingredients": [
-      "bread",
-      "cheese",
-      "butter"
+      "hotdogs"
     ],
     "allergens": [
-      "dairy"
+      "none"
     ],
-    "vegetarian": true,
-    "vegan": false
+    "vegetarian": "no",
+    "vegan": "no"
+  },
+  "3": {
+    "id": 3,
+    "owner": "",
+    "name": "canned hotdogs",
+    "ingredients": [
+      "hotdogs"
+    ],
+    "allergens": [
+      "none"
+    ],
+    "vegetarian": "no",
+    "vegan": "no"
+  },
+  "4": {
+    "id": 4,
+    "owner": "",
+    "name": "cinnamon rolls",
+    "ingredients": [
+      "cinnamon",
+      " rolls",
+      " icing"
+    ],
+    "allergens": [
+      "cinnamon",
+      " gluten"
+    ],
+    "vegetarian": "yes",
+    "vegan": "no"
   }
 }

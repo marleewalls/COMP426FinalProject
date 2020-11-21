@@ -6,7 +6,7 @@ const searchFunc = function () {
     for (let i = 0; i < recipeElems.length; i++) {
         recipeNames.push(recipeElems[i].innerText);
     }
-    debounce(autocomplete(document.getElementById("myInput"), recipeNames), 1000000);
+    debounce(autocomplete(document.getElementById("myInput"), recipeNames), 250);
 }
 
 const debounce = (func, wait) => {
@@ -173,8 +173,8 @@ const edRecipe = function (e) {
             "name": $('#recipeName').val(),
             "ingredients": ($('#ingredients').val()),
             "allergens": ($('#allergens').val()),
-            "vegetarian": true,
-            "vegan": false
+            "vegetarian": ($('#vegetarian').val()),
+            "vegan": ($('#vegan').val())
         }),
         credentials: "same-origin",
         headers: {
@@ -210,8 +210,8 @@ const getNewRecipe = function () {
             "name": $('#recipeName').val(),
             "ingredients": ($('#ingredients').val()),
             "allergens": ($('#allergens').val()),
-            "vegetarian": true,
-            "vegan": false
+            "vegetarian": ($('#vegetarian').val()),
+            "vegan": ($('#vegan').val())
         }),
         credentials: "same-origin",
         headers: {
@@ -223,21 +223,21 @@ const getNewRecipe = function () {
 
 const renderRecipeForm = function (e) {
     console.log("hello");
-    let currID = e.target.id;
+    // let currID = e.target.id;
     return `<div>
-    <form id=${currID}>
-            <label for="recipeName">Recipe Name:</label>
-            <input type="text" id="recipeName" name="recipeName"> <br><br>
-            <label for="ingredients">Ingredients:</label>
-            <input type="text" id="ingredients" name="ingredients"> <br><br>
-            <label for="allergens">Allegerns:</label>
-            <input type="text" id="allergens" name="allergens"> <br><br>
-            <label for="vegetarian">Vegetarian:</label>
-            <input type="text" id="vegetarian" name="vegetarian"> <br><br>
-            <label for="vegan">Vegan:</label>
-            <input type="text" id="vegan" name="vegan"> <br><br>
-            <button type="button" id="addNewRecipe">Post New Recipe</button>
-        </form></div>`
+    <form>
+        <label for="recipeName">Recipe Name:</label>
+        <input type="text" id="recipeName" name="recipeName"> <br><br>
+        <label for="ingredients">Ingredients:</label>
+        <input type="text" id="ingredients" name="ingredients"> <br><br>
+        <label for="allergens">Allegerns:</label>
+        <input type="text" id="allergens" name="allergens"> <br><br>
+        <label for="vegetarian">Vegetarian: <br/><small>(type "yes" or "no")</small></label>
+        <input type="text" id="vegetarian" name="vegetarian"> <br><br>
+        <label for="vegan">Vegan: <br/><small>(type "yes" or "no")</small></label>
+        <input type="text" id="vegan" name="vegan"> <br><br>
+        <button type="button" id="addNewRecipe">Post New Recipe</button>
+    </form></div>`
 }
 
 const renderRecipeFormEd = function (e) {
@@ -251,9 +251,9 @@ const renderRecipeFormEd = function (e) {
             <input type="text" id="ingredients" name="ingredients"> <br><br>
             <label for="allergens">Allegerns:</label>
             <input type="text" id="allergens" name="allergens"> <br><br>
-            <label for="vegetarian">Vegetarian:</label>
+            <label for="vegetarian">Vegetarian: </label>
             <input type="text" id="vegetarian" name="vegetarian"> <br><br>
-            <label for="vegan">Vegan:</label>
+            <label for="vegan">Vegan: </label>
             <input type="text" id="vegan" name="vegan"> <br><br>
             <button type="button" id="editNewRecipe">Post New Recipe</button>
         </form></div>`
