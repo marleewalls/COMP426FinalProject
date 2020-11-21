@@ -1,3 +1,4 @@
+// const RecipeView = require('./recipeBookView.js');
 $(document).ready(() => {
     fetchRecipes();
 
@@ -10,7 +11,6 @@ const fetchRecipes = function () {
             loadRecipes(responseJSON);
         });
 }
-
 
 const loadRecipes = async (recipes) => {
     for (let item in recipes) {
@@ -29,3 +29,4 @@ const loadRecipes = async (recipes) => {
     // })
 
 }
+

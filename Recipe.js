@@ -1,8 +1,9 @@
 const recipeData = require('data-store')({ path: process.cwd() + '/data/recipe.json' });
 
 class Recipe {
-    constructor(id, name, ingredients, allergens, vegetarian, vegan) {
+    constructor(id, owner, name, ingredients, allergens, vegetarian, vegan) {
         this.id = id;
+        this.owner = owner;
         this.name = name;
         this.ingredients = ingredients;
         this.allergens = allergens;
@@ -27,22 +28,23 @@ Recipe.getAllIDs = async () => {
 Recipe.findByID = async (id) => {
     let rdata = recipeData.get(id);
     if (rdata != null) {
-        return new Recipe(rdata.id, rdata.name, rdata.ingredients, rdata.allergens, rdata.vegetarian, rdata.vegan);
+        return new Recipe(rdata.id, rdata.owner, rdata.name, rdata.ingredients, rdata.allergens, rdata.vegetarian, rdata.vegan);
     }
     return null;
 }
 
-Recipe.nextID = Recipe.getAllIDs().reduce((max, nextID) => {
-    if (max < nextID) {
-        return nextID;
-    }
-    return max;
-}, -1) + 1;
 
-Recipe.create = (name, ingredients, allergens, vegetarian, vegan) => {
-    let id = Recipe.nextID;
-    Recipe.nextID += 1;
-    let r = new Recipe(id, name, ingredients, allergens, vegetarian, vegan);
+// Recipe.nextID = Recipe.getAllIDs().reduce((max, nextID) => {
+//     if (max < nextID) {
+//         return nextID;
+//     }
+//     return max;
+// }, -1) + 1;
+
+Recipe.create = (owner, name, ingredients, allergens, vegetarian, vegan) => {
+    // let id = Recipe.nextID;
+    // Recipe.nextID += 1;
+    let r = new Recipe(2, owner, name, ingredients, allergens, vegetarian, vegan);
     recipeData.set(r.id.toString(), r);
     return r;
 }
