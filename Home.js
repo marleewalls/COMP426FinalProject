@@ -1,7 +1,7 @@
 let currUser = "";
 
 const searchFunc = function () {
-    let recipeElems = document.getElementsByClassName('title is-4');
+    let recipeElems = document.getElementsByClassName('card-title');
     let recipeNames = []
     for (let i = 0; i < recipeElems.length; i++) {
         recipeNames.push(recipeElems[i].innerText);
@@ -44,7 +44,7 @@ function autocomplete(inp, arr) {
         this.parentNode.appendChild(a);
         /*for each item in the array...*/
         for (i = 0; i < arr.length; i++) {
-            let recipeElems = document.getElementsByClassName('media');
+            let recipeElems = document.getElementsByClassName('card mb-3');
             recipeElems[i].style.display = "block";
             /*check if the item starts with the same letters as the text field value:*/
             if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
@@ -227,17 +227,28 @@ const renderRecipeForm = function (e) {
     // let currID = e.target.id;
     return `<div>
     <form>
-        <label for="recipeName">Recipe Name:</label>
-        <input type="text" id="recipeName" name="recipeName"> <br><br>
-        <label for="ingredients">Ingredients:</label>
-        <input type="text" id="ingredients" name="ingredients"> <br><br>
-        <label for="allergens">Allegerns:</label>
-        <input type="text" id="allergens" name="allergens"> <br><br>
-        <label for="vegetarian">Vegetarian: <br/><small>(type "yes" or "no")</small></label>
-        <input type="text" id="vegetarian" name="vegetarian"> <br><br>
-        <label for="vegan">Vegan: <br/><small>(type "yes" or "no")</small></label>
-        <input type="text" id="vegan" name="vegan"> <br><br>
-        <button type="button" id="addNewRecipe">Post New Recipe</button>
+    <div class="form-group">
+      <label for="recipeName">Recipe Name</label>
+      <input type="text" class="form-control" id="recipeName">
+    </div>
+    <div class="form-group">
+        <label for="ingredients">Ingredients</label>
+        <input type="text" class="form-control" id="ingredients">
+        <small id="emailHelp" class="form-text text-muted">Comma separated and no spaces. ex. bread,butter,sugar</small>
+    </div>
+    <div class="form-group">
+      <label for="allergens">Allergens</label>
+      <input type="text" class="form-control" id="allergens">
+    </div>
+    <div class="form-group">
+      <label for="vegetarian">Vegetarian</label>
+      <input type="text" class="form-control" id="vegetarian">
+    </div>
+    <div class="form-group">
+      <label for="vegan">Vegan</label>
+      <input type="text" class="form-control" id="vegan">
+    </div>
+    <button type="submit" id="addNewRecipe" class="btn btn-primary">Post New Recipe</button>
     </form></div>`
 }
 
@@ -271,18 +282,31 @@ const edRecipeForm = function (e) {
     //need to change what it replaces 
     $edRecipeButton.replaceWith(`<div>
     <form id="newRecipeForm">
-            <label for="recipeName">Recipe Name:</label>
-            <input type="text" id="recipeName" name="recipeName"> <br><br>
-            <label for="ingredients">Ingredients:</label>
-            <input type="text" id="ingredients" name="ingredients"> <br><br>
-            <label for="allergens">Allegerns:</label>
-            <input type="text" id="allergens" name="allergens"> <br><br>
-            <label for="vegetarian">Vegetarian:</label>
-            <input type="text" id="vegetarian" name="vegetarian"> <br><br>
-            <label for="vegan">Vegan:</label>
-            <input type="text" id="vegan" name="vegan"> <br><br>
-            <button type="button" id="editNewRecipe">Post New Recipe</button>
-        </form></div>`);
+    <div class="form-group">
+      <label for="recipeName">Recipe Name</label>
+      <input type="text" class="form-control" id="recipeName">
+    </div>
+    <div class="form-group">
+        <label for="ingredients">Ingredients</label>
+        <input type="text" class="form-control" id="ingredients">
+        <small id="emailHelp" class="form-text text-muted">Comma separated and no spaces. ex. bread,butter,sugar</small>
+    </div>
+    <div class="form-group">
+      <label for="allergens">Allergens</label>
+      <input type="text" class="form-control" id="allergens">
+    </div>
+    <div class="form-group">
+      <label for="vegetarian">Vegetarian</label>
+      <input type="text" class="form-control" id="vegetarian">
+    </div>
+    <div class="form-group">
+      <label for="vegan">Vegan</label>
+      <input type="text" class="form-control" id="vegan">
+    </div>
+   
+    <button type="submit" id="editNewRecipe" class="btn btn-primary">Post New Recipe</button>
+  </form>
+        </form></div><br>`);
 }
 
 $(function () {
