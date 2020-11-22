@@ -148,6 +148,22 @@ const delRecipe = function (e) {
     });
 }
 
+// const editRecipe = function(e) {
+//     let $curr = getElementById(e.target.id);
+//     fetch('http://localhost:3030/recipe/'+e.target.id, {
+//         method: 'GET',
+//         mode: 'no-cors',
+//         credentials: "same-origin",
+//         headers: {
+//             "Accept": "application/json",
+//             "Content-Type": "application/x-www-form-urlencoded"
+//         }
+//     }).then((response) => {
+//         currUser = response;
+//         $curr.replaceWith()
+//     });
+// }
+
 const edRecipe = function (e) {
     let currID = e.target.id;
     console.log("hiiiii");
@@ -183,12 +199,45 @@ const edRecipe = function (e) {
         }
     })
 }
-
+// const editRecipe = function (e) {
+//     let $curr = e.target.id;
+//     fetch('http://localhost:3030/currentUser', {
+//         method: 'GET',
+//         mode: 'no-cors',
+//         credentials: "same-origin",
+//         headers: {
+//             "Accept": "application/json",
+//             "Content-Type": "application/x-www-form-urlencoded"
+//         }
+//     }).then((response) => {
+//         currUser = response;
+//     });
+//     // console.log($('#recipeName').val());
+//     // console.log(($('#ingredients').val()).split(","));
+//     fetch('http://localhost:3030/recipe', {
+//         method: 'POST',
+//         mode: 'no-cors',
+//         body: JSON.stringify({
+//             "owner": currUser,
+//             "name": $('#recipeName').val(),
+//             "ingredients": ($('#ingredients').val()),
+//             "allergens": ($('#allergens').val()),
+//             "vegetarian": ($('#vegetarian').val()),
+//             "vegan": ($('#vegan').val())
+//         }),
+//         credentials: "same-origin",
+//         headers: {
+//             "Accept": "application/json",
+//             "Content-Type": "application/x-www-form-urlencoded"
+//         }
+//     }).then(() => {
+//         console.log(getElementById($curr));
+//         getElementById($curr).remove();
+//     })
+// }
 
 
 const getNewRecipe = function () {
-    console.log("hiiiii");
-
     fetch('http://localhost:3030/currentUser', {
         method: 'GET',
         mode: 'no-cors',
@@ -294,8 +343,9 @@ $(function () {
     $("body").on("click", "#addNewRecipe", getNewRecipe);
 
     $('body').on('click', "[data-handle='ed']", edRecipeForm);
-    $('body').on('click', "[data-handle='like']", edRecipe); //change this
+    //$('body').on('click', "[data-handle='like']", edRecipe); //change this
     $('body').on('click', "[data-handle='del']", delRecipe);
+    //$('body').on('click', '#editNewRecipe', editRecipe);
 })
 
 

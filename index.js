@@ -97,25 +97,19 @@ app.get('/recipe/:id', (req, res) => {
 
 app.post('/recipe', (req, res) => {
     let obj1 = {}
-    console.log(req.body);
     for (let first in req.body) {
         obj1 = first;
         break;
     }
-    // console.log(obj);
     obj1 = JSON.parse(obj1);
-    console.log(obj1);
     let name = obj1["name"];
-    console.log(name);
     let ingredients = obj1["ingredients"].split(',');
-    console.log(ingredients);
     let allergens = obj1["allergens"].split(',');
     let vegetarian = obj1["vegetarian"];
     let vegan = obj1["vegan"];
     let owner = obj1["owner"];
     // let { name, ingredients, allergens, vegetarian, vegan } = req.body;
     // add code to check validity
-
     let r = Recipe.create(owner, name, ingredients, allergens, vegetarian, vegan);
     if (r == null) {
         res.status(400).send("Bad Request");
@@ -125,6 +119,7 @@ app.post('/recipe', (req, res) => {
 })
 
 app.put('/recipe/:id', (req, res) => {
+    console.log("endpoint");
     let r = Recipe.findByID(req.params.id);
     if (r == null) {
         res.status(404).send("Recipe not found");
