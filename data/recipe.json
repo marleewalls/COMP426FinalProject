@@ -73,5 +73,21 @@
     ],
     "vegetarian": "yes",
     "vegan": "no"
+  },
+  "5": {
+    "id": 5,
+    "owner": "",
+    "name": "ghetto french toast",
+    "ingredients": [
+      "bread",
+      "butter",
+      "sugar",
+      "cinnamon"
+    ],
+    "allergens": [
+      "dairy"
+    ],
+    "vegetarian": "yes",
+    "vegan": "no"
   }
 }
