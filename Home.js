@@ -245,7 +245,7 @@ const renderRecipeFormEd = function (e) {
     let currID = e.target.id;
     console.log("hello");
     return `<div id=${currID}>
-    <form id="newRecipeForm">
+    <form class="newRecipeForm">
             <label for="recipeName">Recipe Name:</label>
             <input type="text" id="recipeName" name="recipeName"> <br><br>
             <label for="ingredients">Ingredients:</label>
@@ -270,7 +270,7 @@ const edRecipeForm = function (e) {
     const $edRecipeButton = $("[data-handle='ed']");
     //need to change what it replaces 
     $edRecipeButton.replaceWith(`<div>
-    <form id="newRecipeForm">
+    <form class="newRecipeForm">
             <label for="recipeName">Recipe Name:</label>
             <input type="text" id="recipeName" name="recipeName"> <br><br>
             <label for="ingredients">Ingredients:</label>
@@ -285,10 +285,12 @@ const edRecipeForm = function (e) {
         </form></div>`);
 }
 
+
 $(function () {
     // document.getElementById("mySearch").onkeyup(searchFunc);
     // document.getElementById("mySearch").addEventListener("keyup", searchFunc);
     // document.getElementById("myInput").addEventListener("keyup", searchFunc);
+    initMap();
     $('body').on('click', '#myInput', searchFunc);
 
     $('body').on('click', '#createNewRecipe', newRecipeForm);
