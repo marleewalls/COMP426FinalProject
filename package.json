@@ -2,9 +2,14 @@
   "name": "comp426finalproject",
   "version": "1.0.0",
   "description": "Marlee Walls and Mary Green",
+  "engine": {
+    "node": "12.x"
+  },
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
@@ -17,6 +22,7 @@
   },
   "homepage": "https://github.com/marleewalls/COMP426FinalProject#readme",
   "dependencies": {
+    "ejs": "^2.5.6",
     "ajax": "0.0.4",
     "body-parser": "^1.19.0",
     "bulma": "^0.9.1",
@@ -27,5 +33,6 @@
     "module": "^1.2.5",
     "require": "^2.4.20"
   },
-  "devDependencies": {}
+  "devDependencies": {},
+  "keywords": []
 }
