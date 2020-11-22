@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Marlee Walls and Mary Green",
   "engine": {
-    "node": "12.x"
+    "node": "12.18.3"
   },
   "main": "index.js",
   "scripts": {
