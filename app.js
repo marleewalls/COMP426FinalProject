@@ -1,8 +1,8 @@
 function initMap() {
     // Create the map.
     const map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 7,
-        center: { lat: 52.632469, lng: -1.689423 },
+        zoom: 15,
+        center: { lat: 35.913255, lng: -79.055855 },
     });
 
     // Load the stores GeoJSON onto the map.
