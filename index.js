@@ -251,24 +251,8 @@ app.get('/logout', (req, res) => {
 })
 
 app.get('/', function (req, res) {
-    res.sendFile(path.join('./index.html'))
+    res.sendFile(path.join('index.html'));
 })
-
-app.get('browserSync', () => {
-    browserSync.init({
-        server: {
-            baseDir: task.dir.base,
-            middleware: [
-                webpackDevMiddleware(bundler, {
-                    publicPath: webpackConfig.output.publicPath,
-                    stats: 'errors-only'
-                })
-            ]
-        },
-        browser: 'chrome'
-    });
-});
-
 
 const port = 3030;
 app.listen(port, () => {
