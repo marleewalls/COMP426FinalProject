@@ -203,7 +203,7 @@ const getNewRecipe = function () {
     // });
     // console.log($('#recipeName').val());
     // console.log(($('#ingredients').val()).split(","));
-    fetch('http://localhost:5000/recipe', {
+    fetch('https://powerful-brook-12795.herokuapp.com/recipe', {
         method: 'POST',
         //mode: 'no-cors',
         body: JSON.stringify({
