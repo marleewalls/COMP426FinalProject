@@ -251,9 +251,9 @@ app.get('/logout', (req, res) => {
     res.json(true);
 })
 
-// app.get('/', function (req, res) {
-//     res.sendFile(path.join('./index.html'));
-// })
+app.get('/', function (req, res) {
+    res.sendFile(path.join('./index.html'));
+})
 
 // app.listen(8080);
 
