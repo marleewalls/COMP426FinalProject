@@ -105,19 +105,6 @@
     "vegetarian": "no",
     "vegan": "no"
   },
-  "8": {
-    "id": 8,
-    "owner": "margreen",
-    "name": "editing this grilled cheese",
-    "ingredients": [
-      "still cheese"
-    ],
-    "allergens": [
-      "still cheeese"
-    ],
-    "vegetarian": "yes",
-    "vegan": "no"
-  },
   "9": {
     "id": 9,
     "owner": "margreen",

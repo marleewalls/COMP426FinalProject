@@ -177,7 +177,7 @@ const delRecipe = function (e) {
             "Accept": "application/json",
             "Content-Type": "application/x-www-form-urlencoded"
         }
-    }).then((response) => response.json()).then(data => console.log(data));
+    }).then((response) => response.json()).then(() => location.reload());
 }
 
 const edRecipe = function (e) {
