@@ -4,6 +4,7 @@ const Recipe = require('./Recipe.js');
 const Secret = require('./Secret.js');
 const User = require('./users.js');
 const bodyParser = require('body-parser');
+var path = require('path');
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // export let userSession = "";
@@ -254,10 +255,12 @@ app.get('/', function (req, res) {
     res.sendFile(path.join('./index.html'));
 })
 
+app.listen(8080);
+
 // const port = 3030;
-app.listen(port, () => {
-    console.log("It worked!");
-});
+// app.listen(port, () => {
+//     console.log("It worked!");
+// });
 
 
 
