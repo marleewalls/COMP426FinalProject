@@ -14,7 +14,7 @@ var path = require('path');
 // app.use(express.static("/Users/margreen/COMP426FinalProject/recipeBookView.js"));
 // app.use(express.static("/Users/margreen/COMP426FinalProject/mapApp.js"));
 
-app.use(express.static(path.join(__dirname)));
+app.use(express.static(path.join(__dirname + "public")));
 
 app.get("/", function (req, res) {
     res.sendFile(path.join(__dirname + '/index.html'))
