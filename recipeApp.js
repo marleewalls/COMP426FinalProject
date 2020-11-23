@@ -6,7 +6,7 @@ $(document).ready(() => {
 });
 
 const fetchRecipes = function () {
-    fetch('./data/recipe.json').then((response) => response.json())
+    fetch('/data/recipe.json').then((response) => response.json())
         .then((responseJSON) => {
             loadRecipes(responseJSON);
         });

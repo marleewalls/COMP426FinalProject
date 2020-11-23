@@ -89,5 +89,20 @@
     ],
     "vegetarian": "yes",
     "vegan": "no"
+  },
+  "6": {
+    "id": 6,
+    "owner": "margreen",
+    "name": "Grilled Cheese",
+    "ingredients": [
+      "bread",
+      "cheese",
+      "butter"
+    ],
+    "allergens": [
+      "dairy"
+    ],
+    "vegetarian": "yes",
+    "vegan": "no"
   }
 }

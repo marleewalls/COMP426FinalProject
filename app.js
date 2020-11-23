@@ -1,9 +1,9 @@
 const express = require('express');
 const app = express();
 var path = require('path');
-const Recipe = require('./public/Recipe.js');
+const Recipe = require('./Recipe.js');
 // const Secret = require('./Secret.js');
-const User = require('./public/users.js');
+const User = require('./users.js');
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: true }));
 const expressSession = require('express-session');
@@ -20,23 +20,38 @@ const expressSession = require('express-session');
 // app.use(express.static("/Users/margreen/COMP426FinalProject/recipeBookView.js"));
 // app.use(express.static("/Users/margreen/COMP426FinalProject/mapApp.js"));
 
-app.use(express.static(path.join(__dirname + "/public")));
-app.use(express.static(path.join(__dirname + "/public/data")));
+app.use(express.static(__dirname));
+// console.log(__dirname);
+// console.log("above");
+// app.use(express.static(path.join(__dirname, "user.js")));
+// app.use(express.static(path.join(__dirname, "sign_in.js")));
+// app.use(express.static(path.join(__dirname, "sign_up.js")));
+// app.use(express.static(path.join(__dirname, "Recipe.js")));
+// app.use(express.static(path.join(__dirname, "recipeBookView.js")));
+// app.use(express.static(path.join(__dirname, "recipeApp.js")));
+// app.use(express.static(path.join(__dirname, "mapApp.js")));
+// app.use(express.static(path.join(__dirname, "Home.js")));
+
+// app.use(express.static(path.join(__dirname, "index.html")));
+// app.use(express.static(path.join(__dirname, "sign_in.html")));
+// app.use(express.static(path.join(__dirname, "sign_up.html")));
+// app.use(express.static(path.join(__dirname, "profile.html")));
+// app.use(express.static(path.join(__dirname + "/public/data")));
 
 app.get("/", function (req, res) {
-    res.sendFile(path.join(__dirname + '/public/index.html'))
+    res.sendFile(path.join(__dirname + '/index.html'))
 })
 app.get("/index.html", function (req, res) {
-    res.sendFile(path.join(__dirname + '/public/index.html'))
+    res.sendFile(path.join(__dirname + '/index.html'))
 })
 app.get("/sign_in.html", function (req, res) {
-    res.sendFile(path.join(__dirname + '/public/sign_in.html'))
+    res.sendFile(path.join(__dirname + '/sign_in.html'))
 })
 app.get("/sign_up.html", function (req, res) {
-    res.sendFile(path.join(__dirname + '/public/sign_up.html'))
+    res.sendFile(path.join(__dirname + '/sign_up.html'))
 })
 app.get("/profile.html", function (req, res) {
-    res.sendFile(path.join(__dirname + '/public/profile.html'))
+    res.sendFile(path.join(__dirname + '/profile.html'))
 })
 
 
@@ -61,7 +76,7 @@ app.use(expressSession({
     saveUninitialized: false
 }));
 
-const login_data = require('data-store')({ path: process.cwd() + '/public/data/users.json' });
+const login_data = require('data-store')({ path: process.cwd() + '/data/users.json' });
 
 app.post('/signup', (req, res) => {
     let obj = {}
@@ -117,7 +132,7 @@ app.post('/login', (req, res) => {
     res.status(403).send("Unauthorized");
 });
 
-const recipe_data = require('data-store')({ path: process.cwd() + '/public/data/recipe.json' });
+const recipe_data = require('data-store')({ path: process.cwd() + '/data/recipe.json' });
 
 app.get('/recipe', (req, res) => {
     // res.json(Recipe.getAllIDs());
