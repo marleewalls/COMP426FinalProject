@@ -229,16 +229,16 @@ app.put('/recipe/:id', (req, res) => {
 
 app.delete('/recipe/:id', (req, res) => {
     console.log("made it to backend");
+    console.log(req.params.id);
     let r = Recipe.findByID(req.params.id);
     console.log(r);
     if (r == null) {
         res.status(404).send("Recipe not found");
         return;
+    } else {
+        r.delete();
     }
-    // r.json().delete();
-    // r.Recipe.delete();
     return res.json(r);
-    // Recipe.delete();
 })
 
 

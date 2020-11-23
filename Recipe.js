@@ -25,7 +25,7 @@ Recipe.getAllIDs = () => {
     return Object.keys(recipeData.data).map((id => { return parseInt(id); }));
 }
 
-Recipe.findByID = async (id) => {
+Recipe.findByID = (id) => {
     let rdata = recipeData.get(id);
     if (rdata != null) {
         return new Recipe(rdata.id, rdata.owner, rdata.name, rdata.ingredients, rdata.allergens, rdata.vegetarian, rdata.vegan);

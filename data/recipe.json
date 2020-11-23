@@ -32,19 +32,6 @@
     "vegetarian": "no",
     "vegan": "no"
   },
-  "2": {
-    "id": 2,
-    "owner": "",
-    "name": "more canned hotdogs",
-    "ingredients": [
-      "hotdogs"
-    ],
-    "allergens": [
-      "none"
-    ],
-    "vegetarian": "no",
-    "vegan": "no"
-  },
   "3": {
     "id": 3,
     "owner": "",
@@ -141,19 +128,6 @@
     "id": 9,
     "owner": "margreen",
     "name": "ghetto french toast",
-    "ingredients": [
-      ""
-    ],
-    "allergens": [
-      ""
-    ],
-    "vegetarian": "",
-    "vegan": ""
-  },
-  "10": {
-    "id": 10,
-    "owner": "margreen",
-    "name": "givigvb",
     "ingredients": [
       ""
     ],
