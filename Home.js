@@ -190,9 +190,9 @@ const edRecipe = function (e) {
 const getNewRecipe = function () {
     console.log("hiiiii");
 
-    fetch('http://localhost:3030/currentUser', {
+    fetch('https://www.c00k-b00k.com/currentUser', {
         method: 'GET',
-        mode: 'no-cors',
+        //mode: 'no-cors',
         credentials: "same-origin",
         headers: {
             "Accept": "application/json",
@@ -203,9 +203,9 @@ const getNewRecipe = function () {
     });
     // console.log($('#recipeName').val());
     // console.log(($('#ingredients').val()).split(","));
-    fetch('http://localhost:3030/recipe', {
+    fetch('https://www.c00k-b00k.com/recipe', {
         method: 'POST',
-        mode: 'no-cors',
+        //mode: 'no-cors',
         body: JSON.stringify({
             "owner": currUser,
             "name": $('#recipeName').val(),
