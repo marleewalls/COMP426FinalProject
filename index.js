@@ -251,16 +251,16 @@ app.get('/logout', (req, res) => {
     res.json(true);
 })
 
-app.get('/', function (req, res) {
-    res.sendFile(path.join('./index.html'));
-})
+// app.get('/', function (req, res) {
+//     res.sendFile(path.join('./index.html'));
+// })
 
-app.listen(8080);
+// app.listen(8080);
 
-// const port = 3030;
-// app.listen(port, () => {
-//     console.log("It worked!");
-// });
+const port = 3030;
+app.listen(port, () => {
+    console.log("It worked!");
+});
 
 
 
