@@ -131,7 +131,7 @@ function autocomplete(inp, arr) {
 
 const delRecipe = function (e) {
     let currID = e.target.id;
-    fetch('http://localhost:3030/recipe/' + currID, {
+    fetch('https://powerful-brook-12795.herokuapp.com/recipe/' + currID, {
         method: 'OPTIONS',
         mode: 'no-cors',
         credentials: "same-origin",
@@ -153,7 +153,7 @@ const edRecipe = function (e) {
     let currID = e.target.id;
     console.log("hiiiii");
 
-    fetch('http://localhost:3030/currentUser', {
+    fetch('https://powerful-brook-12795.herokuapp.com/currentUser', {
         method: 'GET',
         mode: 'no-cors',
         credentials: "same-origin",
@@ -166,7 +166,7 @@ const edRecipe = function (e) {
     });
     // console.log($('#recipeName').val());
     // console.log(($('#ingredients').val()).split(","));
-    fetch('http://localhost:3030/recipe/' + currID, {
+    fetch('https://powerful-brook-12795.herokuapp.com/recipe/' + currID, {
         method: 'POST',
         mode: 'no-cors',
         body: JSON.stringify({
@@ -190,7 +190,7 @@ const edRecipe = function (e) {
 const getNewRecipe = function () {
     console.log("hiiiii");
 
-    fetch('https://www.c00k-b00k.com/currentUser', {
+    fetch('https://powerful-brook-12795.herokuapp.com/currentUser', {
         method: 'GET',
         //mode: 'no-cors',
         credentials: "same-origin",
@@ -203,7 +203,7 @@ const getNewRecipe = function () {
     });
     // console.log($('#recipeName').val());
     // console.log(($('#ingredients').val()).split(","));
-    fetch('https://www.c00k-b00k.com/recipe', {
+    fetch('https://powerful-brook-12795.herokuapp.com/recipe', {
         method: 'POST',
         //mode: 'no-cors',
         body: JSON.stringify({
