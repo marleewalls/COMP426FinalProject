@@ -2,7 +2,17 @@ const express = require('express');
 const app = express();
 var path = require('path');
 
-app.use(express.static("/Users/margreen/COMP426FinalProject"));
+app.use(express.static("/Users/margreen/COMP426FinalProject/index.html"));
+app.use(express.static("/Users/margreen/COMP426FinalProject/sign_in.html"));
+app.use(express.static("/Users/margreen/COMP426FinalProject/sign_in.js"));
+app.use(express.static("/Users/margreen/COMP426FinalProject/sign_up.html"));
+app.use(express.static("/Users/margreen/COMP426FinalProject/sign_up.js"));
+app.use(express.static("/Users/margreen/COMP426FinalProject/profile.html"));
+app.use(express.static("/Users/margreen/COMP426FinalProject/Home.js"));
+app.use(express.static("/Users/margreen/COMP426FinalProject/recipeApp.js"));
+app.use(express.static("/Users/margreen/COMP426FinalProject/Recipe.js"));
+app.use(express.static("/Users/margreen/COMP426FinalProject/recipeBookView.js"));
+app.use(express.static("/Users/margreen/COMP426FinalProject/mapApp.js"));
 
 app.get("/", function (req, res) {
     res.sendFile(path.join(__dirname + '/index.html'))
