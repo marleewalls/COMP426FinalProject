@@ -251,7 +251,7 @@ app.get('/logout', (req, res) => {
 })
 
 app.get('/', function (req, res) {
-    res.sendFile(path.join('index.html'));
+    res.sendFile(path.join('./index.html'));
 })
 
 const port = 3030;
