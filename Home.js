@@ -192,7 +192,7 @@ const getNewRecipe = function () {
 
     fetch('https://www.c00k-b00k.com/currentUser', {
         method: 'GET',
-        mode: 'no-cors',
+        //mode: 'no-cors',
         credentials: "same-origin",
         headers: {
             "Accept": "application/json",
@@ -205,7 +205,7 @@ const getNewRecipe = function () {
     // console.log(($('#ingredients').val()).split(","));
     fetch('https://www.c00k-b00k.com/recipe', {
         method: 'POST',
-        mode: 'no-cors',
+        //mode: 'no-cors',
         body: JSON.stringify({
             "owner": currUser,
             "name": $('#recipeName').val(),
