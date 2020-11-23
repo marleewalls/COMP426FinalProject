@@ -21,7 +21,7 @@ const expressSession = require('express-session');
 // app.use(express.static("/Users/margreen/COMP426FinalProject/mapApp.js"));
 
 app.use(express.static(path.join(__dirname + "/public")));
-app.use(express.static(path.join(__dirname + "/data")));
+app.use(express.static(path.join(__dirname + "/public/data")));
 
 app.get("/", function (req, res) {
     res.sendFile(path.join(__dirname + '/public/index.html'))
@@ -61,7 +61,7 @@ app.use(expressSession({
     saveUninitialized: false
 }));
 
-const login_data = require('data-store')({ path: process.cwd() + '/data/users.json' });
+const login_data = require('data-store')({ path: process.cwd() + '/public/data/users.json' });
 
 app.post('/signup', (req, res) => {
     let obj = {}
