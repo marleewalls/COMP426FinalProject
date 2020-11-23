@@ -4,7 +4,7 @@ $(function () {
   $form.submit(function (e) {
     e.preventDefault();
 
-    fetch('http://localhost:5000/login', {
+    fetch('https://powerful-brook-12795.herokuapp.com/login', {
       method: 'POST',
       // mode: 'no-cors',
       body: JSON.stringify({
