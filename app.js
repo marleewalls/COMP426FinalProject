@@ -21,6 +21,7 @@ const expressSession = require('express-session');
 // app.use(express.static("/Users/margreen/COMP426FinalProject/mapApp.js"));
 
 app.use(express.static(path.join(__dirname + "/public")));
+app.use(express.static(path.join(__dirname + "/data")));
 
 app.get("/", function (req, res) {
     res.sendFile(path.join(__dirname + '/public/index.html'))
