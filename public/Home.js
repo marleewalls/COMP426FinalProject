@@ -190,24 +190,24 @@ const edRecipe = function (e) {
 const getNewRecipe = function () {
     console.log("hiiiii");
 
-    fetch('https://powerful-brook-12795.herokuapp.com/currentUser', {
-        method: 'GET',
-        //mode: 'no-cors',
-        credentials: "same-origin",
-        headers: {
-            "Accept": "application/json",
-            "Content-Type": "application/x-www-form-urlencoded"
-        }
-    }).then((resonse) => {
-        currUser = response;
-    });
+    // fetch('https://powerful-brook-12795.herokuapp.com/currentUser', {
+    //     method: 'GET',
+    //     //mode: 'no-cors',
+    //     credentials: "same-origin",
+    //     headers: {
+    //         "Accept": "application/json",
+    //         "Content-Type": "application/x-www-form-urlencoded"
+    //     }
+    // }).then((resonse) => {
+    //     currUser = response;
+    // });
     // console.log($('#recipeName').val());
     // console.log(($('#ingredients').val()).split(","));
     fetch('https://powerful-brook-12795.herokuapp.com/recipe', {
         method: 'POST',
         //mode: 'no-cors',
         body: JSON.stringify({
-            "owner": currUser,
+            "owner": "margreen",
             "name": $('#recipeName').val(),
             "ingredients": ($('#ingredients').val()),
             "allergens": ($('#allergens').val()),
@@ -219,7 +219,7 @@ const getNewRecipe = function () {
             "Accept": "application/json",
             "Content-Type": "application/x-www-form-urlencoded"
         }
-    })
+    }).then(console.log("congrats"));
 }
 
 const renderRecipeForm = function (e) {
