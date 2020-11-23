@@ -6,11 +6,10 @@
     "node": "12.18.3",
     "npm": "6.14.6"
   },
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-
-    "test": "echo \"Error: no test specified\" && exit 1", 
-  "start": "node index.js"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
@@ -23,11 +22,11 @@
   },
   "homepage": "https://github.com/marleewalls/COMP426FinalProject#readme",
   "dependencies": {
-    "ejs": "^2.5.6",
     "ajax": "0.0.4",
     "body-parser": "^1.19.0",
     "bulma": "^0.9.1",
     "data-store": "^4.0.3",
+    "ejs": "^2.5.6",
     "express": "^4.17.1",
     "express-session": "^1.17.1",
     "jquery": "^3.5.1",
