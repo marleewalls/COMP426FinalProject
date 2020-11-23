@@ -11,11 +11,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 const expressSession = require('express-session');
 
-var http = require('http');
-http.createServer(function (req, res) {
-    res.writeHead(200, { "Content-Type": "text/plain" });
-    res.end("hello world");
-}).listen(process.env.$PORT);
+// var http = require('http');
+// http.createServer(function (req, res) {
+//     res.writeHead(200, { "Content-Type": "text/plain" });
+//     res.end("hello world");
+// }).listen(process.env.$PORT);
 
 app.get('/currentUser/:id', (req, res) => {
     console.log("here");
@@ -257,16 +257,16 @@ app.get('/logout', (req, res) => {
     res.json(true);
 })
 
-// app.get('/', function (req, res) {
-//     res.sendFile(path.join('./index.html'));
-// })
+app.get('/', function (req, res) {
+    res.sendFile(path.join('./index.html'));
+})
 
 // app.listen(8080);
-const $PORT = 3030;
-// const port = 3030;
-// app.listen(port, () => {
-//     console.log("It worked!");
-// });
+// const $PORT = 3030;
+const port = 3030;
+app.listen(port, () => {
+    console.log("It worked!");
+});
 
 
 
