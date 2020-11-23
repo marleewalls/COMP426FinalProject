@@ -6,7 +6,7 @@ app.use(express.static("/Users/margreen/COMP426FinalProject"));
 
 app.get("/", function (req, res) {
     // res.send("<h1>Hello World!</h1>");
-    res.sendFile(path.join('./index.html'))
+    res.sendFile(path.join(__dirname + '/index.html'))
 })
 
 
