@@ -128,6 +128,36 @@ function autocomplete(inp, arr) {
 
 
 
+const update = function(e) {
+    let currID = e.target.id;
+    fetch('http://localhost:5000/currentUser', {
+        method: 'GET',
+        // mode: 'no-cors',
+        credentials: "same-origin",
+        headers: {
+            "Accept": "application/json",
+            "Content-Type": "application/x-www-form-urlencoded"
+        }
+    }).then((response) => {
+        currUser = response;
+    });
+    fetch('http://localhost:5000/recipe/' + currID, {
+        method: 'PUT',
+        credentials: "same-origin",
+        headers: {
+            "Accept": "application/json",
+            "Content-Type": "application/x-www-form-urlencoded"
+        },
+        body: JSON.stringify({
+            "owner": currUser,
+            "name": $('#editedName').val(),
+            "ingredients": ($('#editedIngredients').val()),
+            "allergens": ($('#editedAllergens').val()),
+            "vegetarian": ($('#editedVegetarian').val()),
+            "vegan": ($('#editedVegan').val())
+        })
+    }).then((response) => response.json());
+}
 
 const delRecipe = function (e) {
     console.log("DELETE");
@@ -258,24 +288,24 @@ const renderRecipeForm = function (e) {
     </form></div>`
 }
 
-const renderRecipeFormEd = function (e) {
-    let currID = e.target.id;
-    console.log("hello");
-    return `<div id=${currID}>
-    <form id="newRecipeForm">
-            <label for="recipeName">Recipe Name:</label>
-            <input type="text" id="recipeName" name="recipeName"> <br><br>
-            <label for="ingredients">Ingredients:</label>
-            <input type="text" id="ingredients" name="ingredients"> <br><br>
-            <label for="allergens">Allegerns:</label>
-            <input type="text" id="allergens" name="allergens"> <br><br>
-            <label for="vegetarian">Vegetarian: </label>
-            <input type="text" id="vegetarian" name="vegetarian"> <br><br>
-            <label for="vegan">Vegan: </label>
-            <input type="text" id="vegan" name="vegan"> <br><br>
-            <button type="button" id="editNewRecipe">Post New Recipe</button>
-        </form></div>`
-}
+// const renderRecipeFormEd = function (e) {
+//     let currID = e.target.id;
+//     console.log("hello");
+//     return `<div id=${currID}>
+//     <form id="newRecipeForm">
+//             <label for="recipeName">Recipe Name:</label>
+//             <input type="text" id="recipeName" name="recipeName"> <br><br>
+//             <label for="ingredients">Ingredients:</label>
+//             <input type="text" id="ingredients" name="ingredients"> <br><br>
+//             <label for="allergens">Allegerns:</label>
+//             <input type="text" id="allergens" name="allergens"> <br><br>
+//             <label for="vegetarian">Vegetarian: </label>
+//             <input type="text" id="vegetarian" name="vegetarian"> <br><br>
+//             <label for="vegan">Vegan: </label>
+//             <input type="text" id="vegan" name="vegan"> <br><br>
+//             <button type="button" id="editNewRecipe">Post New Recipe</button>
+//         </form></div>`
+// }
 
 const newRecipeForm = function () {
     const $newRecipeButton = $('#createNewRecipe');
@@ -293,27 +323,27 @@ const edRecipeForm = function (e) {
     <form id="newRecipeForm">
     <div class="form-group">
       <label for="recipeName">Recipe Name</label>
-      <input type="text" class="form-control" id="recipeName">
+      <input type="text" class="form-control" id="editedName">
     </div>
     <div class="form-group">
         <label for="ingredients">Ingredients</label>
-        <input type="text" class="form-control" id="ingredients">
+        <input type="text" class="form-control" id="editedIngredients">
         <small id="emailHelp" class="form-text text-muted">Comma separated and no spaces. ex. bread,butter,sugar</small>
     </div>
     <div class="form-group">
       <label for="allergens">Allergens</label>
-      <input type="text" class="form-control" id="allergens">
+      <input type="text" class="form-control" id="editedAllergens">
     </div>
     <div class="form-group">
       <label for="vegetarian">Vegetarian</label>
-      <input type="text" class="form-control" id="vegetarian">
+      <input type="text" class="form-control" id="editedVegetarian">
     </div>
     <div class="form-group">
       <label for="vegan">Vegan</label>
-      <input type="text" class="form-control" id="vegan">
+      <input type="text" class="form-control" id="editedVegan">
     </div>
    
-    <button type="submit" id="editNewRecipe" class="btn btn-primary">Edit Recipe</button>
+    <button type="submit" id="${currID}" class="btn btn-primary" data-handle='update'>Edit Recipe</button>
   </form>
         </form></div><br>`);
 }
@@ -331,6 +361,7 @@ $(function () {
     $('body').on('click', "[data-handle='like']", edRecipe); //change this
     $('body').on('click', "[data-handle='del']", delRecipe);
 
+    $('body').on('click', "[data-handle='update']", update);
     $('.nav-item').on('click', 'a', function (e) {
 
         e.stopImmediatePropagation();

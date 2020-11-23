@@ -95,16 +95,12 @@
   "7": {
     "id": 7,
     "owner": "margreen",
-    "name": "camron sandwhich",
+    "name": "marlee sandwhich",
     "ingredients": [
-      "bread",
-      "ham",
-      "pepperoni",
-      "salami",
-      "turkey"
+      "hehe"
     ],
     "allergens": [
-      "none"
+      "haha"
     ],
     "vegetarian": "no",
     "vegan": "no"
@@ -112,17 +108,15 @@
   "8": {
     "id": 8,
     "owner": "margreen",
-    "name": "Grilled Cheese again",
+    "name": "editing this grilled cheese",
     "ingredients": [
-      "bread",
-      "cheese",
-      "butter"
+      "still cheese"
     ],
     "allergens": [
-      "wer"
+      "still cheeese"
     ],
-    "vegetarian": "skjefn",
-    "vegan": "igu"
+    "vegetarian": "yes",
+    "vegan": "no"
   },
   "9": {
     "id": 9,

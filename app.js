@@ -202,12 +202,10 @@ app.put('/recipe/:id', (req, res) => {
     }
 
     let obj1 = {}
-    console.log(req.body);
     for (let first in req.body) {
         obj1 = first;
         break;
     }
-
     obj1 = JSON.parse(obj1);
     let name = obj1["name"];
     let ingredients = obj1["ingredients"].split(',');
@@ -221,7 +219,7 @@ app.put('/recipe/:id', (req, res) => {
     r.allergens = allergens;
     r.vegetarian = vegetarian;
     r.vegan = vegan;
-
+    //console.log(r.name);
     r.update();
     res.json(r);
 
