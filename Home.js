@@ -1,4 +1,4 @@
-let currUser = "";
+let currUser = "what";
 
 const searchFunc = function () {
     let recipeElems = document.getElementsByClassName('card-title');
@@ -130,32 +130,33 @@ function autocomplete(inp, arr) {
 
 
 const delRecipe = function (e) {
+    console.log("DELETE");
+
     let currID = e.target.id;
+    console.log(currID);
     fetch('http://localhost:5000/recipe/' + currID, {
-        method: 'OPTIONS',
-        mode: 'no-cors',
+        method: 'DELETE',
+        // mode: 'no-cors',
         credentials: "same-origin",
         headers: {
-            "Access-Control-Allow-Origin": "*",
-            "Access-Control-Request-Method": "DELETE",
-            // "Access-Control-Allow-Methods": "POST, GET, OPTIONS, PUT, DELETE",
-            // "Access-Control-Allow-Headers": "Content-Type",
-            "Access-Control-Request-Method": "DELETE",
+            // "Access-Control-Allow-Origin": "*",
+            // "Access-Control-Request-Method": "DELETE",
+            // // "Access-Control-Allow-Methods": "POST, GET, OPTIONS, PUT, DELETE",
+            // // "Access-Control-Allow-Headers": "Content-Type",
+            // "Access-Control-Request-Method": "DELETE",
             "Accept": "application/json",
             "Content-Type": "application/x-www-form-urlencoded"
         }
-    }).then((response) => {
-        currUser = response;
-    });
+    }).then((response) => response.json()).then(data => console.log(data));
 }
 
 const edRecipe = function (e) {
     let currID = e.target.id;
     console.log("hiiiii");
 
-    fetch('http://localhost:5000/recipe/currentUser', {
+    fetch('http://localhost:5000/currentUser', {
         method: 'GET',
-        mode: 'no-cors',
+        // mode: 'no-cors',
         credentials: "same-origin",
         headers: {
             "Accept": "application/json",
@@ -168,7 +169,7 @@ const edRecipe = function (e) {
     // console.log(($('#ingredients').val()).split(","));
     fetch('http://localhost:5000/recipe/' + currID, {
         method: 'POST',
-        mode: 'no-cors',
+        // mode: 'no-cors',
         body: JSON.stringify({
             "owner": currUser,
             "name": $('#recipeName').val(),
@@ -190,24 +191,25 @@ const edRecipe = function (e) {
 const getNewRecipe = function () {
     console.log("hiiiii");
 
-    // fetch('https://powerful-brook-12795.herokuapp.com/currentUser', {
-    //     method: 'GET',
-    //     //mode: 'no-cors',
-    //     credentials: "same-origin",
-    //     headers: {
-    //         "Accept": "application/json",
-    //         "Content-Type": "application/x-www-form-urlencoded"
-    //     }
-    // }).then((resonse) => {
-    //     currUser = response;
-    // });
-    // console.log($('#recipeName').val());
-    // console.log(($('#ingredients').val()).split(","));
-    fetch('https://powerful-brook-12795.herokuapp.com/recipe', {
+    fetch('http://localhost:5000/currentUser', {
+        method: 'GET',
+        //mode: 'no-cors',
+        credentials: "same-origin",
+        headers: {
+            "Accept": "application/json",
+            "Content-Type": "application/x-www-form-urlencoded"
+        }
+    }).then(response => response.json()).then(data => getNewRecipeTwo(data));
+}
+
+
+const getNewRecipeTwo = function (currentUserData) {
+    console.log(currentUserData);
+    fetch('http://localhost:5000/recipe', {
         method: 'POST',
         //mode: 'no-cors',
         body: JSON.stringify({
-            "owner": "margreen",
+            "owner": currentUserData,
             "name": $('#recipeName').val(),
             "ingredients": ($('#ingredients').val()),
             "allergens": ($('#allergens').val()),
@@ -221,6 +223,10 @@ const getNewRecipe = function () {
         }
     }).then(console.log("congrats"));
 }
+
+// console.log($('#recipeName').val());
+// console.log(($('#ingredients').val()).split(","));
+
 
 const renderRecipeForm = function (e) {
     console.log("hello");
@@ -278,7 +284,10 @@ const newRecipeForm = function () {
 
 const edRecipeForm = function (e) {
     let currID = e.target.id;
-    const $edRecipeButton = $("[data-handle='ed']");
+    // const EditObj = final.filter(obj => obj.id == currID);
+    // $('button#' + currID + " [data-handle='ed']");
+    console.log(currID);
+    const $edRecipeButton = $('div#' + currID + " .card-body");
     //need to change what it replaces 
     $edRecipeButton.replaceWith(`<div>
     <form id="newRecipeForm">
@@ -304,7 +313,7 @@ const edRecipeForm = function (e) {
       <input type="text" class="form-control" id="vegan">
     </div>
    
-    <button type="submit" id="editNewRecipe" class="btn btn-primary">Post New Recipe</button>
+    <button type="submit" id="editNewRecipe" class="btn btn-primary">Edit Recipe</button>
   </form>
         </form></div><br>`);
 }
@@ -321,6 +330,11 @@ $(function () {
     $('body').on('click', "[data-handle='ed']", edRecipeForm);
     $('body').on('click', "[data-handle='like']", edRecipe); //change this
     $('body').on('click', "[data-handle='del']", delRecipe);
+
+    $('.nav-item').on('click', 'a', function (e) {
+
+        e.stopImmediatePropagation();
+    });
 })
 
 

@@ -60,15 +60,6 @@ app.listen(process.env.PORT || 5000, () => {
     console.log("It worked!");
 });
 
-
-
-app.get('/currentUser/:id', (req, res) => {
-    console.log("here");
-    currUser = req.session.user;
-    console.log(currUser);
-    return res.json(currUser);
-});
-
 app.use(expressSession({
     name: "kmpSessionCookie",
     secret: "express session secret",
@@ -76,9 +67,31 @@ app.use(expressSession({
     saveUninitialized: false
 }));
 
+
+
+// app.get('/currentUser/:id', (req, res) => {
+//     console.log("here");
+//     currUser = req.session.user;
+//     console.log(currUser);
+//     return res.json(currUser);
+// });
+app.get('/currentUser', (req, res) => {
+    console.log("here");
+    // console.log(req);
+    // currUser = req.session.user;
+    currUser = req.session.user;
+    console.log(currUser);
+    // console.log(json(currUser));
+    // return res(currUser);
+    return res.json(currUser);
+});
+
+
+
 const login_data = require('data-store')({ path: process.cwd() + '/data/users.json' });
 
 app.post('/signup', (req, res) => {
+    console.log("made it to sign up backend");
     let obj = {}
     for (let first in req.body) {
         obj = first;
@@ -91,7 +104,8 @@ app.post('/signup', (req, res) => {
     let username = obj["user"];
     let password = obj["password"];
 
-
+    // console.log(username);
+    // console.log(req.body);
     let user_data = login_data.get(username);
     console.log(user_data);
     if (user_data == null) {
@@ -214,14 +228,17 @@ app.put('/recipe/:id', (req, res) => {
 })
 
 app.delete('/recipe/:id', (req, res) => {
-    // let r = Recipe.findByID(req.params.id);
-    // if (r == null) {
-    //     res.status(404).send("Recipe not found");
-    //     return;
-    // }
-    // r.delete();
-    // res.json(true);
-    Recipe.delete();
+    console.log("made it to backend");
+    let r = Recipe.findByID(req.params.id);
+    console.log(r);
+    if (r == null) {
+        res.status(404).send("Recipe not found");
+        return;
+    }
+    // r.json().delete();
+    // r.Recipe.delete();
+    return res.json(r);
+    // Recipe.delete();
 })
 
 

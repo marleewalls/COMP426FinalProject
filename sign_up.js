@@ -4,9 +4,9 @@ $(function () {
     $form.submit(function (e) {
         e.preventDefault();
 
-        fetch('http://localhost:3030/signup', {
+        fetch('http://localhost:5000/signup', {
             method: 'POST',
-            mode: 'no-cors',
+            // mode: 'no-cors',
             body: JSON.stringify({
                 "first_name": $('#first_name').val(),
                 "last_name": $('#last_name').val(),

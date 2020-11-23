@@ -26,10 +26,10 @@ class RecipeView {
             </div>
           </div>
         </div>
-        <button class="btn btn-outline-secondary" data-handle="ed">Edit</button>
-        <button class="btn btn-outline-secondary" data-handle="del">Delete</button>
+        <button id=${this.recipe.id} class="btn btn-outline-secondary" data-handle="ed">Edit</button>
+        <button id=${this.recipe.id} class="btn btn-outline-secondary" data-handle="del">Delete</button>
 
-      </div>
+      </div><br><br>
 
         `)
     $('#recipeList').append(view_div);

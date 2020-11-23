@@ -104,5 +104,63 @@
     ],
     "vegetarian": "yes",
     "vegan": "no"
+  },
+  "7": {
+    "id": 7,
+    "owner": "margreen",
+    "name": "camron sandwhich",
+    "ingredients": [
+      "bread",
+      "ham",
+      "pepperoni",
+      "salami",
+      "turkey"
+    ],
+    "allergens": [
+      "none"
+    ],
+    "vegetarian": "no",
+    "vegan": "no"
+  },
+  "8": {
+    "id": 8,
+    "owner": "margreen",
+    "name": "Grilled Cheese again",
+    "ingredients": [
+      "bread",
+      "cheese",
+      "butter"
+    ],
+    "allergens": [
+      "wer"
+    ],
+    "vegetarian": "skjefn",
+    "vegan": "igu"
+  },
+  "9": {
+    "id": 9,
+    "owner": "margreen",
+    "name": "ghetto french toast",
+    "ingredients": [
+      ""
+    ],
+    "allergens": [
+      ""
+    ],
+    "vegetarian": "",
+    "vegan": ""
+  },
+  "10": {
+    "id": 10,
+    "owner": "margreen",
+    "name": "givigvb",
+    "ingredients": [
+      ""
+    ],
+    "allergens": [
+      ""
+    ],
+    "vegetarian": "",
+    "vegan": ""
   }
 }

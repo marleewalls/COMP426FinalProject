@@ -34,5 +34,12 @@
     "email": "goose@gmail.com",
     "username": "goose",
     "password": "honk"
+  },
+  "hihi": {
+    "first_name": "Mary",
+    "last_name": "Green",
+    "email": "marygreen9499@gmail.com",
+    "username": "hihi",
+    "password": "pls"
   }
 }

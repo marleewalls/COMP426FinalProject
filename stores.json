@@ -3,25 +3,25 @@
     "features": [{
             "geometry": {
                 "type": "Point",
-                "coordinates": [-0.1428115,
-                    51.5125168
+                "coordinates": [35.912324,
+                    -79.070958
                 ]
             },
             "type": "Feature",
             "properties": {
                 "category": "patisserie",
                 "hours": "10am - 6pm",
-                "description": "Modern twists on classic pastries. We're part of a larger chain of patisseries and cafes.",
-                "name": "Josie's Patisserie Mayfair",
-                "phone": "+44 20 1234 5678",
+                "description": "Come and try our award-winning cakes and pastries. We're part of a larger chain of patisseries and cafes.",
+                "name": "Harris Teeter",
+                "phone": "+44 117 121 2121",
                 "storeid": "01"
             }
         },
         {
             "geometry": {
                 "type": "Point",
-                "coordinates": [-2.579623,
-                    51.452251
+                "coordinates": [35.912324,
+                    -79.070958
                 ]
             },
             "type": "Feature",
