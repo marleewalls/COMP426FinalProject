@@ -39,19 +39,19 @@ app.use(express.static(__dirname));
 // app.use(express.static(path.join(__dirname + "/public/data")));
 
 app.get("/", function (req, res) {
-    res.sendFile(path.join(__dirname + '/index.html'))
+    res.sendFile(path.join(__dirname, 'sign_in.html'))
 })
 app.get("/index.html", function (req, res) {
-    res.sendFile(path.join(__dirname + '/index.html'))
+    res.sendFile(path.join(__dirname, 'index.html'))
 })
 app.get("/sign_in.html", function (req, res) {
-    res.sendFile(path.join(__dirname + '/sign_in.html'))
+    res.sendFile(path.join(__dirname, 'sign_in.html'))
 })
 app.get("/sign_up.html", function (req, res) {
-    res.sendFile(path.join(__dirname + '/sign_up.html'))
+    res.sendFile(path.join(__dirname, 'sign_up.html'))
 })
 app.get("/profile.html", function (req, res) {
-    res.sendFile(path.join(__dirname + '/profile.html'))
+    res.sendFile(path.join(__dirname, 'profile.html'))
 })
 
 
