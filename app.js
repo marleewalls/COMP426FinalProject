@@ -7,11 +7,17 @@ app.use(express.static("/Users/margreen/COMP426FinalProject"));
 app.get("/", function (req, res) {
     res.sendFile(path.join(__dirname + '/index.html'))
 })
+app.get("/index.html", function (req, res) {
+    res.sendFile(path.join(__dirname + '/index.html'))
+})
 app.get("/sign_in.html", function (req, res) {
     res.sendFile(path.join(__dirname + '/sign_in.html'))
 })
 app.get("/sign_up.html", function (req, res) {
     res.sendFile(path.join(__dirname + '/sign_up.html'))
+})
+app.get("/profile.html", function (req, res) {
+    res.sendFile(path.join(__dirname + '/profile.html'))
 })
 
 
