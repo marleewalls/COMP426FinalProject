@@ -11,6 +11,12 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 const expressSession = require('express-session');
 
+// var http = require('http');
+// http.createServer(function (req, res) {
+//     res.writeHead(200, { "Content-Type": "text/plain" });
+//     res.end("hello world");
+// }).listen(process.env.$PORT);
+
 app.get('/currentUser/:id', (req, res) => {
     console.log("here");
     currUser = req.session.user;
@@ -257,10 +263,17 @@ app.get('/', function (req, res) {
 
 // app.listen(8080);
 
+// const $PORT = 3030;
+const port = 3030;
+app.listen(port, () => {
+    console.log("It worked!");
+});
+
 // const port = 3030;
 // app.listen(port, () => {
 //     console.log("It worked!");
 // });
+
 
 
 
