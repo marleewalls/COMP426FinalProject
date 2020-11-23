@@ -117,8 +117,11 @@ app.post('/login', (req, res) => {
     res.status(403).send("Unauthorized");
 });
 
+const recipe_data = require('data-store')({ path: process.cwd() + '/public/data/recipe.json' });
+
 app.get('/recipe', (req, res) => {
-    res.json(Recipe.getAllIDs());
+    // res.json(Recipe.getAllIDs());
+    res.json(recipe_data);
     return;
 });
 
@@ -133,6 +136,7 @@ app.get('/recipe/:id', (req, res) => {
 })
 
 app.post('/recipe', (req, res) => {
+    console.log("made it to backend");
     let obj1 = {}
     console.log(req.body);
     for (let first in req.body) {
