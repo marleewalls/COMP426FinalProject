@@ -203,7 +203,7 @@ const getNewRecipe = function () {
     });
     // console.log($('#recipeName').val());
     // console.log(($('#ingredients').val()).split(","));
-    fetch('http://localhost:3030/recipe', {
+    fetch('https://www.c00k-b00k.com/recipe', {
         method: 'POST',
         mode: 'no-cors',
         body: JSON.stringify({
