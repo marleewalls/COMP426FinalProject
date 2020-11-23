@@ -38,21 +38,21 @@ app.use(express.static(__dirname));
 // app.use(express.static(path.join(__dirname, "profile.html")));
 // app.use(express.static(path.join(__dirname + "/public/data")));
 
-app.get("/", function (req, res) {
-    res.sendFile(path.join(__dirname, 'sign_in.html'))
-})
-app.get("/index.html", function (req, res) {
+// app.get("/", function (req, res) {
+//     res.sendFile(path.join(__dirname, 'sign_in.html'))
+// })
+app.get("/home.html", function (req, res) {
     res.sendFile(path.join(__dirname, 'index.html'))
 })
-app.get("/sign_in.html", function (req, res) {
-    res.sendFile(path.join(__dirname, 'sign_in.html'))
-})
-app.get("/sign_up.html", function (req, res) {
-    res.sendFile(path.join(__dirname, 'sign_up.html'))
-})
-app.get("/profile.html", function (req, res) {
-    res.sendFile(path.join(__dirname, 'profile.html'))
-})
+// app.get("/sign_in.html", function (req, res) {
+//     res.sendFile(path.join(__dirname, 'sign_in.html'))
+// })
+// app.get("/sign_up.html", function (req, res) {
+//     res.sendFile(path.join(__dirname, 'sign_up.html'))
+// })
+// app.get("/profile.html", function (req, res) {
+//     res.sendFile(path.join(__dirname, 'profile.html'))
+// })
 
 
 // const port = 3000;
@@ -107,6 +107,8 @@ app.post('/signup', (req, res) => {
     // console.log(username);
     // console.log(req.body);
     let user_data = login_data.get(username);
+    // line above needs to change, it is not getting the correct user
+
     console.log(user_data);
     if (user_data == null) {
         let s = User.create(first_name, last_name, email, username, password);

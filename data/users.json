@@ -41,5 +41,33 @@
     "email": "marygreen9499@gmail.com",
     "username": "hihi",
     "password": "pls"
+  },
+  "maryswag": {
+    "first_name": "Mary",
+    "last_name": "Green",
+    "email": "marygreen9499@gmail.com",
+    "username": "maryswag",
+    "password": "coolcat"
+  },
+  "test": {
+    "first_name": "Mary",
+    "last_name": "Green",
+    "email": "marygreen9499@gmail.com",
+    "username": "test",
+    "password": "test"
+  },
+  "testagain": {
+    "first_name": "Mary",
+    "last_name": "Green",
+    "email": "marygreen9499@gmail.com",
+    "username": "testagain",
+    "password": "testagain"
+  },
+  "yyy": {
+    "first_name": "Mary",
+    "last_name": "Green",
+    "email": "marygreen9499@gmail.com",
+    "username": "yyy",
+    "password": "ggg"
   }
 }

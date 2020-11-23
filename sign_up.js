@@ -1,3 +1,14 @@
+const redirectHome = function () {
+    const $afterSignUp = $('#signup-form');
+    console.log("redirect");
+    $afterSignUp.append(`<p>You have successfully created an account!</p>`);
+    window.location.replace('http://localhost:5000/home.html');
+}
+const alreadyAccount = function () {
+    const $afterSignUp = $('#signup-form');
+    $afterSignUp.append(`<p>An account already exists with that username.</p>`);
+}
+
 $(function () {
     const $form = $('#signup-form');
 
@@ -18,6 +29,12 @@ $(function () {
             headers: {
                 "Accept": "application/json",
                 "Content-Type": "application/x-www-form-urlencoded"
+            }
+        }).then(response => {
+            if (response.status == 404) {
+                alreadyAccount();
+            } else {
+                redirectHome();
             }
         })
     });

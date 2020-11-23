@@ -128,7 +128,7 @@ function autocomplete(inp, arr) {
 
 
 
-const update = function(e) {
+const update = function (e) {
     let currID = e.target.id;
     fetch('http://localhost:5000/currentUser', {
         method: 'GET',
@@ -279,10 +279,12 @@ const renderRecipeForm = function (e) {
     <div class="form-group">
       <label for="vegetarian">Vegetarian</label>
       <input type="text" class="form-control" id="vegetarian">
+      <small id="smallText" class="form-text text-muted">Enter "yes" or "no".</small>
     </div>
     <div class="form-group">
       <label for="vegan">Vegan</label>
       <input type="text" class="form-control" id="vegan">
+      <small id="smallText" class="form-text text-muted">Enter "yes" or "no".</small>
     </div>
     <button type="submit" id="addNewRecipe" class="btn btn-primary">Post New Recipe</button>
     </form></div>`
@@ -337,10 +339,12 @@ const edRecipeForm = function (e) {
     <div class="form-group">
       <label for="vegetarian">Vegetarian</label>
       <input type="text" class="form-control" id="editedVegetarian">
+      <small id="smallText" class="form-text text-muted">Enter "yes" or "no".</small>
     </div>
     <div class="form-group">
       <label for="vegan">Vegan</label>
       <input type="text" class="form-control" id="editedVegan">
+      <small id="smallText" class="form-text text-muted">Enter "yes" or "no".</small>
     </div>
    
     <button type="submit" id="${currID}" class="btn btn-primary" data-handle='update'>Edit Recipe</button>
