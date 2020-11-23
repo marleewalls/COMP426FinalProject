@@ -190,7 +190,7 @@ const edRecipe = function (e) {
 const getNewRecipe = function () {
     console.log("hiiiii");
 
-    fetch('http://localhost:3030/currentUser', {
+    fetch('https://www.c00k-b00k.com/currentUser', {
         method: 'GET',
         mode: 'no-cors',
         credentials: "same-origin",
