@@ -91,6 +91,7 @@ app.get('/currentUser', (req, res) => {
 const login_data = require('data-store')({ path: process.cwd() + '/data/users.json' });
 
 app.get('/currentUserData', (req, res) => {
+    const login_data = require('data-store')({ path: process.cwd() + '/data/users.json' });
     currUser = req.session.user;
     let currUserData = login_data.get(currUser);
     return res.json(currUserData);
@@ -140,6 +141,8 @@ app.post('/login', (req, res) => {
     obj = JSON.parse(obj);
     let user = obj["user"];
     let password = obj["password"];
+
+    const login_data = require('data-store')({ path: process.cwd() + '/data/users.json' });
 
     let user_data = login_data.get(user);
     if (user_data == null) {

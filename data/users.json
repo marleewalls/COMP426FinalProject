@@ -111,5 +111,19 @@
     "email": "marygreen9499@gmail.com",
     "username": "gggt",
     "password": "gggt"
+  },
+  "ttt": {
+    "first_name": "Mary",
+    "last_name": "Green",
+    "email": "marygreen9499@gmail.com",
+    "username": "ttt",
+    "password": "ttt"
+  },
+  "win": {
+    "first_name": "Mary",
+    "last_name": "Green",
+    "email": "marygreen9499@gmail.com",
+    "username": "win",
+    "password": "win"
   }
 }
