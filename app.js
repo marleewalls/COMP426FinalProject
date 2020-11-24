@@ -42,7 +42,7 @@ app.use(express.static(__dirname));
 //     res.sendFile(path.join(__dirname, 'sign_in.html'))
 // })
 app.get("/home.html", function (req, res) {
-    res.sendFile(path.join(__dirname, 'index.html'))
+    res.sendFile(path.join(__dirname, 'home.html'))
 })
 // app.get("/sign_in.html", function (req, res) {
 //     res.sendFile(path.join(__dirname, 'sign_in.html'))
