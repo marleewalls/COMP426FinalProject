@@ -30,7 +30,6 @@ $(function () {
                 "Content-Type": "application/x-www-form-urlencoded"
             }
         }).then(response => {
-            console.log("hi");
             if (response.status == 404) {
                 alreadyAccount();
             } else {

@@ -121,13 +121,14 @@ app.post('/signup', (req, res) => {
     console.log(user_data);
     if (user_data == null) {
         let s = User.create(first_name, last_name, email, username, password);
-        console.log("made it");
-        console.log(s);
-        return;
+        res.status(200).send("Successfully created account");
+        // console.log("made it");
+        // console.log(s);
     } else {
         console.log("Account already created with that username.");
         res.status(404).send("Account already created with that username.");
     }
+    return;
 });
 
 app.post('/login', (req, res) => {
