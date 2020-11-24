@@ -3,30 +3,30 @@
     "features": [{
             "geometry": {
                 "type": "Point",
-                "coordinates": [35.912324,
-                    -79.070958
+                "coordinates": [35.910944,
+                    -79.069953
                 ]
             },
             "type": "Feature",
             "properties": {
-                "category": "patisserie",
-                "hours": "10am - 6pm",
-                "description": "Come and try our award-winning cakes and pastries. We're part of a larger chain of patisseries and cafes.",
+                "category": "grocery store",
+                "hours": "8am - 11pm",
+                "description": "Harris Teeter",
                 "name": "Harris Teeter",
-                "phone": "+44 117 121 2121",
+                "phone": "(919)942-8564",
                 "storeid": "01"
             }
         },
         {
             "geometry": {
                 "type": "Point",
-                "coordinates": [35.912324,
-                    -79.070958
+                "coordinates": [35.91,
+                    -79.07
                 ]
             },
             "type": "Feature",
             "properties": {
-                "category": "patisserie",
+                "category": "grocery store",
                 "hours": "10am - 6pm",
                 "description": "Come and try our award-winning cakes and pastries. We're part of a larger chain of patisseries and cafes.",
                 "name": "Josie's Patisserie Bristol",
