@@ -117,18 +117,5 @@
     ],
     "vegetarian": "",
     "vegan": ""
-  },
-  "10": {
-    "id": 10,
-    "owner": "goose",
-    "name": "test",
-    "ingredients": [
-      "a"
-    ],
-    "allergens": [
-      "a"
-    ],
-    "vegetarian": "a",
-    "vegan": "a"
   }
 }
