@@ -1,8 +1,7 @@
 const redirectHome = function () {
     const $afterSignUp = $('#signup-form');
-    console.log("redirect");
     $afterSignUp.append(`<p>You have successfully created an account!</p>`);
-    window.location.replace('http://localhost:5000/index.html');
+    window.location.replace('https://powerful-brook-12795.herokuapp.com/index.html');
 }
 const alreadyAccount = function () {
     const $afterSignUp = $('#signup-form');
@@ -14,9 +13,8 @@ $(function () {
     $form.submit(function (e) {
         e.preventDefault();
 
-        fetch('http://localhost:5000/signup', {
+        fetch('https://powerful-brook-12795.herokuapp.com/signup', {
             method: 'POST',
-            // mode: 'no-cors',
             body: JSON.stringify({
                 "first_name": $('#first_name').val(),
                 "last_name": $('#last_name').val(),

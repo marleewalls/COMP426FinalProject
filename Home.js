@@ -1,4 +1,4 @@
-let currUser = "what";
+let currUser = "";
 
 const searchFunc = function () {
     let recipeElems = document.getElementsByClassName('card-title');
@@ -10,7 +10,6 @@ const searchFunc = function () {
 }
 
 const debounce = (func, wait) => {
-    console.log("debounce!");
     let timeout;
 
     return function executedFunction(...args) {
@@ -130,9 +129,8 @@ function autocomplete(inp, arr) {
 
 const update = function (e) {
     let currID = e.target.id;
-    fetch('http://localhost:5000/currentUser', {
+    fetch('https://powerful-brook-12795.herokuapp.com/currentUser', {
         method: 'GET',
-        // mode: 'no-cors',
         credentials: "same-origin",
         headers: {
             "Accept": "application/json",
@@ -141,7 +139,7 @@ const update = function (e) {
     }).then((response) => {
         currUser = response;
     });
-    fetch('http://localhost:5000/recipe/' + currID, {
+    fetch('https://powerful-brook-12795.herokuapp.com/recipe/' + currID, {
         method: 'PUT',
         credentials: "same-origin",
         headers: {
@@ -160,20 +158,11 @@ const update = function (e) {
 }
 
 const delRecipe = function (e) {
-    console.log("DELETE");
-
     let currID = e.target.id;
-    console.log(currID);
-    fetch('http://localhost:5000/recipe/' + currID, {
+    fetch('https://powerful-brook-12795.herokuapp.com/recipe/' + currID, {
         method: 'DELETE',
-        // mode: 'no-cors',
         credentials: "same-origin",
         headers: {
-            // "Access-Control-Allow-Origin": "*",
-            // "Access-Control-Request-Method": "DELETE",
-            // // "Access-Control-Allow-Methods": "POST, GET, OPTIONS, PUT, DELETE",
-            // // "Access-Control-Allow-Headers": "Content-Type",
-            // "Access-Control-Request-Method": "DELETE",
             "Accept": "application/json",
             "Content-Type": "application/x-www-form-urlencoded"
         }
@@ -182,11 +171,8 @@ const delRecipe = function (e) {
 
 const edRecipe = function (e) {
     let currID = e.target.id;
-    console.log("hiiiii");
-
-    fetch('http://localhost:5000/currentUser', {
+    fetch('https://powerful-brook-12795.herokuapp.com/currentUser', {
         method: 'GET',
-        // mode: 'no-cors',
         credentials: "same-origin",
         headers: {
             "Accept": "application/json",
@@ -195,11 +181,9 @@ const edRecipe = function (e) {
     }).then((response) => {
         currUser = response;
     });
-    // console.log($('#recipeName').val());
-    // console.log(($('#ingredients').val()).split(","));
-    fetch('http://localhost:5000/recipe/' + currID, {
+
+    fetch('https://powerful-brook-12795.herokuapp.com/recipe/' + currID, {
         method: 'POST',
-        // mode: 'no-cors',
         body: JSON.stringify({
             "owner": currUser,
             "name": $('#recipeName').val(),
@@ -219,11 +203,8 @@ const edRecipe = function (e) {
 
 
 const getNewRecipe = function () {
-    console.log("hiiiii");
-
-    fetch('http://localhost:5000/currentUser', {
+    fetch('https://powerful-brook-12795.herokuapp.com/currentUser', {
         method: 'GET',
-        //mode: 'no-cors',
         credentials: "same-origin",
         headers: {
             "Accept": "application/json",
@@ -234,10 +215,8 @@ const getNewRecipe = function () {
 
 
 const getNewRecipeTwo = function (currentUserData) {
-    console.log(currentUserData);
-    fetch('http://localhost:5000/recipe', {
+    fetch('https://powerful-brook-12795.herokuapp.com/recipe', {
         method: 'POST',
-        //mode: 'no-cors',
         body: JSON.stringify({
             "owner": currentUserData,
             "name": $('#recipeName').val(),
@@ -251,16 +230,10 @@ const getNewRecipeTwo = function (currentUserData) {
             "Accept": "application/json",
             "Content-Type": "application/x-www-form-urlencoded"
         }
-    }).then(console.log("congrats"));
+    });
 }
 
-// console.log($('#recipeName').val());
-// console.log(($('#ingredients').val()).split(","));
-
-
 const renderRecipeForm = function (e) {
-    console.log("hello");
-    // let currID = e.target.id;
     return `<div>
     <form>
     <div class="form-group">
@@ -290,24 +263,6 @@ const renderRecipeForm = function (e) {
     </form></div>`
 }
 
-// const renderRecipeFormEd = function (e) {
-//     let currID = e.target.id;
-//     console.log("hello");
-//     return `<div id=${currID}>
-//     <form id="newRecipeForm">
-//             <label for="recipeName">Recipe Name:</label>
-//             <input type="text" id="recipeName" name="recipeName"> <br><br>
-//             <label for="ingredients">Ingredients:</label>
-//             <input type="text" id="ingredients" name="ingredients"> <br><br>
-//             <label for="allergens">Allegerns:</label>
-//             <input type="text" id="allergens" name="allergens"> <br><br>
-//             <label for="vegetarian">Vegetarian: </label>
-//             <input type="text" id="vegetarian" name="vegetarian"> <br><br>
-//             <label for="vegan">Vegan: </label>
-//             <input type="text" id="vegan" name="vegan"> <br><br>
-//             <button type="button" id="editNewRecipe">Post New Recipe</button>
-//         </form></div>`
-// }
 
 const newRecipeForm = function () {
     const $newRecipeButton = $('#createNewRecipe');
@@ -316,11 +271,7 @@ const newRecipeForm = function () {
 
 const edRecipeForm = function (e) {
     let currID = e.target.id;
-    // const EditObj = final.filter(obj => obj.id == currID);
-    // $('button#' + currID + " [data-handle='ed']");
-    console.log(currID);
     const $edRecipeButton = $('div#' + currID + " .card-body");
-    //need to change what it replaces 
     $edRecipeButton.replaceWith(`<div>
     <form id="newRecipeForm">
     <div class="form-group">
@@ -353,16 +304,13 @@ const edRecipeForm = function (e) {
 }
 
 $(function () {
-    // document.getElementById("mySearch").onkeyup(searchFunc);
-    // document.getElementById("mySearch").addEventListener("keyup", searchFunc);
-    // document.getElementById("myInput").addEventListener("keyup", searchFunc);
     $('body').on('click', '#myInput', searchFunc);
 
     $('body').on('click', '#createNewRecipe', newRecipeForm);
     $("body").on("click", "#addNewRecipe", getNewRecipe);
 
     $('body').on('click', "[data-handle='ed']", edRecipeForm);
-    $('body').on('click', "[data-handle='like']", edRecipe); //change this
+    $('body').on('click', "[data-handle='like']", edRecipe);
     $('body').on('click', "[data-handle='del']", delRecipe);
 
     $('body').on('click', "[data-handle='update']", update);
