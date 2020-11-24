@@ -48,9 +48,4 @@ Recipe.create = (owner, name, ingredients, allergens, vegetarian, vegan) => {
     recipeData.set(r.id.toString(), r);
     return r;
 }
-
-// let r1 = new Recipe(0, ["peanut butter", "jelly", "bread"], ["peanuts", "gluten"], true, true);
-// recipeData.set(r1.id.toString(), r1);
-
 module.exports = Recipe;
-// exports.recipe = Recipe;

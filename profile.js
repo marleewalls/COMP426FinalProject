@@ -1,5 +1,4 @@
 const renderProfile = function (user_data) {
-    console.log(user_data);
     let first_name = user_data.first_name;
     let last_name = user_data.last_name;
     let username = user_data.username;
@@ -20,9 +19,8 @@ const renderProfile = function (user_data) {
 
 
 const fetProfile = function () {
-    fetch('http://localhost:5000/currentUserData', {
+    fetch('https://powerful-brook-12795.herokuapp.com/currentUserData', {
         method: 'GET',
-        //mode: 'no-cors',
         credentials: "same-origin",
         headers: {
             "Accept": "application/json",
@@ -32,15 +30,14 @@ const fetProfile = function () {
 }
 
 const fetLogout = function () {
-    fetch('http://localhost:5000/logout', {
+    fetch('https://powerful-brook-12795.herokuapp.com/logout', {
         method: 'GET',
-        //mode: 'no-cors',
         credentials: "same-origin",
         headers: {
             "Accept": "application/json",
             "Content-Type": "application/x-www-form-urlencoded"
         }
-    }).then(window.location.replace("http://localhost:5000/"));
+    }).then(window.location.replace("https://powerful-brook-12795.herokuapp.com/"));
 }
 
 

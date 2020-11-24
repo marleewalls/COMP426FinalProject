@@ -1,7 +1,7 @@
 const successMessage = function () {
   const $afterSignIn = $('#login-form');
   $afterSignIn.append(`<p>You have successfully signed in!</p>`);
-  window.location.replace("http://localhost:5000/home.html");
+  window.location.replace("https://powerful-brook-12795.herokuapp.com/home.html");
 }
 const notFound = function () {
   const $afterSignIn = $('#login-form');
@@ -13,7 +13,7 @@ const unauthorizedMessage = function () {
 }
 
 const redirectSU = function () {
-  window.location.replace("http://localhost:5000/sign_up.html");
+  window.location.replace("https://powerful-brook-12795.herokuapp.com/sign_up.html");
 }
 
 $(function () {
@@ -24,9 +24,8 @@ $(function () {
   $form.submit(function (e) {
     e.preventDefault();
 
-    fetch('http://localhost:5000/login', {
+    fetch('https://powerful-brook-12795.herokuapp.com/login', {
       method: 'POST',
-      // mode: 'no-cors',
       body: JSON.stringify({
         "user": $('#username_check').val(),
         "password": $('#password_check').val()

@@ -35,19 +35,9 @@ User.findByName = (username) => {
     return null;
 };
 
-// User.next_id = Secret.getAllIDs().reduce((max, next_id) => {
-//     if (max < next_id) {
-//         return next_id;
-//     }
-//     return max;
-// }, -1) + 1;
-
 User.create = (first_name, last_name, email, username, password) => {
-    // let id = Secret.next_id;
-    // Secret.next_id += 1;
     let s = new User(first_name, last_name, email, username, password);
     user_data.set(s.username.toString(), s);
-    console.log("creation of new user");
     return s;
 }
 
