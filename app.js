@@ -131,7 +131,6 @@ app.post('/signup', (req, res) => {
 });
 
 app.post('/login', (req, res) => {
-    console.log(req.session.user);
     let obj = {}
     for (let first in req.body) {
         obj = first;
