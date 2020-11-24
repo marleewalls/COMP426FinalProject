@@ -1,7 +1,7 @@
 {
   "0": {
     "id": 0,
-    "owner": "marlee",
+    "owner": "goose",
     "name": "Peanut Butter and Jelly Sandwich",
     "ingredients": [
       "peanut butter",
@@ -17,7 +17,7 @@
   },
   "1": {
     "id": 1,
-    "owner": "margreen",
+    "owner": "maryswag",
     "name": "Pepperoni Pizza",
     "ingredients": [
       "tomato sauce",
@@ -32,23 +32,10 @@
     "vegetarian": "no",
     "vegan": "no"
   },
-  "3": {
-    "id": 3,
-    "owner": "",
-    "name": "canned hotdogs",
-    "ingredients": [
-      "hotdogs"
-    ],
-    "allergens": [
-      "none"
-    ],
-    "vegetarian": "no",
-    "vegan": "no"
-  },
   "4": {
     "id": 4,
-    "owner": "",
-    "name": "cinnamon rolls",
+    "owner": "goose",
+    "name": "Cinnamon Rolls",
     "ingredients": [
       "cinnamon",
       " rolls",
@@ -63,8 +50,8 @@
   },
   "5": {
     "id": 5,
-    "owner": "",
-    "name": "ghetto french toast",
+    "owner": "goose",
+    "name": "French Toast",
     "ingredients": [
       "bread",
       "butter",
@@ -79,7 +66,7 @@
   },
   "6": {
     "id": 6,
-    "owner": "margreen",
+    "owner": "maryswag",
     "name": "Grilled Cheese",
     "ingredients": [
       "bread",
@@ -94,13 +81,21 @@
   },
   "7": {
     "id": 7,
-    "owner": "margreen",
-    "name": "marlee sandwhich",
+    "owner": "maryswag",
+    "name": "Omelet",
     "ingredients": [
-      "hehe"
+      "eggs",
+      "cheese",
+      "butter",
+      "bacon",
+      "peppers",
+      "spinach",
+      "mushrooms", 
+      "onions"
     ],
     "allergens": [
-      "haha"
+      "eggs",
+      "dairy"
     ],
     "vegetarian": "no",
     "vegan": "no"
@@ -108,14 +103,64 @@
   "9": {
     "id": 9,
     "owner": "margreen",
-    "name": "ghetto french toast",
+    "name": "Peanut Butter Chocolate Chip Cookies",
     "ingredients": [
-      ""
+      "peanut butter",
+      "sugar",
+      "eggs", 
+      "chocolate chips"
     ],
     "allergens": [
-      ""
+      "peanuts"
     ],
-    "vegetarian": "",
-    "vegan": ""
+    "vegetarian": "yes",
+    "vegan": "no"
+  },
+  "10": {
+    "id": 10,
+    "owner": "goose",
+    "name": "Canned Hotdogs",
+    "ingredients": [
+      "hotdogs"
+    ],
+    "allergens": [
+      "none"
+    ],
+    "vegetarian": "no",
+    "vegan": "no"
+  },
+  "11": {
+    "id": 11,
+    "owner": "goose",
+    "name": "Tacos",
+    "ingredients": [
+      "tortillas",
+      "cheese",
+      "salsa",
+      "chicken",
+      "sour cream",
+      "lettuce"
+    ],
+    "allergens": [
+      "none"
+    ],
+    "vegetarian": "no",
+    "vegan": "no"
+  },
+  "12": {
+    "id": 12,
+    "owner": "goose",
+    "name": "Strawberry Banana Smoothie",
+    "ingredients": [
+      "strawberries",
+      "bananas",
+      "vanilla yogurt",
+      "ice"
+    ],
+    "allergens": [
+      "none"
+    ],
+    "vegetarian": "yes",
+    "vegan": "no"
   }
 }

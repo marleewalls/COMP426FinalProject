@@ -57,7 +57,7 @@ app.get("/home.html", function (req, res) {
 
 // const port = 3000;
 app.listen(process.env.PORT || 5000, () => {
-    console.log("It worked!");
+    return;
 });
 
 app.use(expressSession({
