@@ -13,12 +13,12 @@
     <script src="./recipeBookView.js"></script>
     <script type="module" src="./recipeApp.js"></script>
     <script src="./Home.js"></script>
-    <script src="./mapApp.js"></script>
+    <!-- <script src="./mapApp.js"></script> -->
     <script src="sign_in.js"></script>
-    <script
+    <!-- <script
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCExODL27Nhptizxz_ReP0XDWuiUNzeN9A&callback=initMap&libraries=&v=weekly"
     defer
-  ></script>
+  ></script> -->
   <style type="text/css">
     /* Set the size of the div element that contains the map */
     #map {
@@ -90,14 +90,93 @@
       </script> -->
     
       <!-- The div element for the map -->
-      <div id="map"></div><br><br>
+      <!-- <div id="map"></div><br><br> -->
 
         <!-- <div id="map"></div>
 
         <script src="app.js"></script>
         <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCExODL27Nhptizxz_ReP0XDWuiUNzeN9A&callback=initMap&libraries=&v=weekly">
         </script> -->
+        <h1>Grocery Stores Near Me</h1>
 
+        <div id="googleMap" style="width:100%;height:400px;"></div>
+        <script>
+        function myMap() {
+          var mapProp= {
+            center:new google.maps.LatLng(35.910944, -79.069953),
+            zoom:13,
+          };
+          var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+          var marker1 = new google.maps.Marker({
+            position: new google.maps.LatLng(35.910944, -79.069953),
+            // carborro harris teeter
+          });
+          var harrisTeeter = new google.maps.InfoWindow({
+            content:"Harris Teeter"
+          });
+          var marker2 = new google.maps.Marker({
+            position: new google.maps.LatLng(35.911140, -79.071167),
+            // weaver street market
+          });
+          var wsMarket = new google.maps.InfoWindow({
+            content:"Weaver Street Market"
+          });
+          var marker3 = new google.maps.Marker({
+            position: new google.maps.LatLng(35.914200, -79.053590),
+            // franklin mart
+          });
+          var fMart = new google.maps.InfoWindow({
+            content:"Franklin Mart"
+          });
+          var marker4 = new google.maps.Marker({
+            position: new google.maps.LatLng(35.906890, -79.089300),
+            // food lion
+          });
+          var foodLion = new google.maps.InfoWindow({
+            content:"Food Lion"
+          });
+          var marker5 = new google.maps.Marker({
+            position: new google.maps.LatLng(35.910880, -79.076490),
+            // carrboro food mart
+          });
+          var cfm = new google.maps.InfoWindow({
+            content:"Carrboro Food Mart"
+          });
+          var marker6 = new google.maps.Marker({
+            position: new google.maps.LatLng(35.934689, -79.028099),
+            // whole foods
+          });
+          var wholeFoods = new google.maps.InfoWindow({
+            content:"Whole Foods"
+          });
+          var marker7 = new google.maps.Marker({
+            position: new google.maps.LatLng(35.9369, -79.0252),
+            // trader joe's
+          });
+          var tJoes = new google.maps.InfoWindow({
+            content:"Trader Joe's"
+          });
+
+          marker1.setMap(map);
+          marker2.setMap(map);
+          marker3.setMap(map);
+          marker4.setMap(map);
+          marker5.setMap(map);
+          marker6.setMap(map);
+          marker7.setMap(map);
+          harrisTeeter.open(map,marker1);
+          wsMarket.open(map,marker2);
+          fMart.open(map,marker3);
+          foodLion.open(map,marker4);
+          cfm.open(map,marker5);
+          wholeFoods.open(map,marker6);
+          tJoes.open(map,marker7);
+        }
+        </script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCExODL27Nhptizxz_ReP0XDWuiUNzeN9A&callback=myMap"></script>
+
+        <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCExODL27Nhptizxz_ReP0XDWuiUNzeN9A&callback=initMap&libraries=&v=weekly" -->
+        <!-- ></script> -->
 
 
     <form autocomplete="off" action="/Home.js">
