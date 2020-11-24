@@ -91,6 +91,7 @@ app.get('/currentUser', (req, res) => {
 const login_data = require('data-store')({ path: process.cwd() + '/data/users.json' });
 
 app.get('/currentUserData', (req, res) => {
+    const login_data = require('data-store')({ path: process.cwd() + '/data/users.json' });
     currUser = req.session.user;
     let currUserData = login_data.get(currUser);
     return res.json(currUserData);
@@ -121,17 +122,17 @@ app.post('/signup', (req, res) => {
     console.log(user_data);
     if (user_data == null) {
         let s = User.create(first_name, last_name, email, username, password);
-        console.log("made it");
-        console.log(s);
-        return;
+        res.status(200).send("Successfully created account");
+        // console.log("made it");
+        // console.log(s);
     } else {
         console.log("Account already created with that username.");
         res.status(404).send("Account already created with that username.");
     }
+    return;
 });
 
 app.post('/login', (req, res) => {
-    console.log(req.session.user);
     let obj = {}
     for (let first in req.body) {
         obj = first;
@@ -140,6 +141,8 @@ app.post('/login', (req, res) => {
     obj = JSON.parse(obj);
     let user = obj["user"];
     let password = obj["password"];
+
+    const login_data = require('data-store')({ path: process.cwd() + '/data/users.json' });
 
     let user_data = login_data.get(user);
     if (user_data == null) {

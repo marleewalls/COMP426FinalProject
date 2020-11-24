@@ -95,7 +95,7 @@
   "7": {
     "id": 7,
     "owner": "margreen",
-    "name": "marlee sandwhich",
+    "name": "goose sandwhich",
     "ingredients": [
       "hehe"
     ],
@@ -117,5 +117,21 @@
     ],
     "vegetarian": "",
     "vegan": ""
+  },
+  "10": {
+    "id": 10,
+    "owner": "goose",
+    "name": "french fries",
+    "ingredients": [
+      "potatoes",
+      " oil",
+      " salt",
+      " pepper"
+    ],
+    "allergens": [
+      "none"
+    ],
+    "vegetarian": "yes",
+    "vegan": "yes"
   }
 }

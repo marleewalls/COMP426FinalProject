@@ -2,7 +2,7 @@ const redirectHome = function () {
     const $afterSignUp = $('#signup-form');
     console.log("redirect");
     $afterSignUp.append(`<p>You have successfully created an account!</p>`);
-    window.location.replace('http://localhost:5000/home.html');
+    window.location.replace('http://localhost:5000/index.html');
 }
 const alreadyAccount = function () {
     const $afterSignUp = $('#signup-form');
@@ -11,7 +11,6 @@ const alreadyAccount = function () {
 
 $(function () {
     const $form = $('#signup-form');
-
     $form.submit(function (e) {
         e.preventDefault();
 
