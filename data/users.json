@@ -76,26 +76,5 @@
     "email": "marygreen9499@gmail.com",
     "username": "yyyyy",
     "password": "kgk"
-  },
-  "new_user": {
-    "first_name": "new",
-    "last_name": "user",
-    "email": "new@gmail.com",
-    "username": "new_user",
-    "password": "new"
-  },
-  "try": {
-    "first_name": "try",
-    "last_name": "try",
-    "email": "try@gmail.com",
-    "username": "try",
-    "password": "try"
-  },
-  "asdas": {
-    "first_name": "asdsa",
-    "last_name": "adas",
-    "email": "asdas@gmail.com",
-    "username": "asdas",
-    "password": "asd"
   }
 }

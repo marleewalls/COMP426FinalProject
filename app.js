@@ -90,6 +90,15 @@ app.get('/currentUser', (req, res) => {
 
 const login_data = require('data-store')({ path: process.cwd() + '/data/users.json' });
 
+app.get('/currentUserData', (req, res) => {
+    currUser = req.session.user;
+    let currUserData = login_data.get(currUser);
+    return res.json(currUserData);
+});
+
+
+
+
 app.post('/signup', (req, res) => {
     console.log("made it to sign up backend");
     let obj = {}
