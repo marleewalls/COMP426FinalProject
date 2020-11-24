@@ -11,7 +11,6 @@ const alreadyAccount = function () {
 
 $(function () {
     const $form = $('#signup-form');
-
     $form.submit(function (e) {
         e.preventDefault();
 
@@ -31,6 +30,7 @@ $(function () {
                 "Content-Type": "application/x-www-form-urlencoded"
             }
         }).then(response => {
+            console.log("hi");
             if (response.status == 404) {
                 alreadyAccount();
             } else {
