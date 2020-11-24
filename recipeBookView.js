@@ -10,7 +10,7 @@ class RecipeView {
   createViewDiv() {
     // console.log(userSession);
     let view_div = $(`
-        <div class="card mb-3" style="max-width: 540px;">
+        <div class="card mb-3" id="card" style="max-width: 540px;">
         <div class="row no-gutters">
       
           <div class="col-md-8" id=${this.recipe.id}>

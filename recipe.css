@@ -1,0 +1,64 @@
+#title {
+    text-align: center;
+}
+
+.nav-item {
+    background-color: lightblue;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+}
+
+ul {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: lightblue;
+}
+
+.nav-item button:hover {
+    background-color: #ddd;
+    color: gray;
+}
+
+.nav-item button.active {
+    background-color: #ccc;
+}
+
+body {
+    background-color: #f1f1f1;
+    color: rgb(104, 103, 103);
+    padding-left: 35px;
+    padding-right: 35px;
+}
+
+h1 {
+    padding-top: 35px;
+    font-style: italic;
+}
+
+#card {
+    margin: auto;
+    border-color: lightblue;
+    border-width: 15px;
+}
+
+h5 {
+    text-decoration: underline;
+}
+
+form {
+    padding-bottom: 25px;
+}
+
+#createNewRecipe {
+    background-color: lightblue;
+    color: rgb(104, 103, 103);
+    border-color: rgb(104, 103, 103);
+}
+
+#createNewRecipe:hover {
+    background-color: #ddd;
+}
